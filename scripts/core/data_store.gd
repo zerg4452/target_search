@@ -167,6 +167,13 @@ func _validate_presets(errs: PackedStringArray) -> void:
 			errs.append("preset %s: 타입 수 × 최소 인원이 NPC 수보다 많음" % pid)
 		if int(p["accusations"]) < 1:
 			errs.append("preset %s: 지목 기회는 1 이상" % pid)
+		var cs: Dictionary = p.get("crowd_speedup", {})
+		if bool(cs.get("enabled", false)):
+			var ratio: float = float(cs.get("start_ratio", -1.0))
+			if ratio <= 0.0 or ratio > 1.0:
+				errs.append("preset %s: crowd_speedup.start_ratio는 0~1" % pid)
+			if float(cs.get("per_step", -1.0)) <= 0.0 or float(cs.get("max_mult", 0.0)) < 1.0:
+				errs.append("preset %s: crowd_speedup.per_step > 0, max_mult ≥ 1이어야 함" % pid)
 		if not ["always", "briefing_only"].has(String(p["reference_viewer"])):
 			errs.append("preset %s: reference_viewer 값 오류" % pid)
 		var wipe: float = theoretical_wipe_s(p)

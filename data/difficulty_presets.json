@@ -38,7 +38,10 @@
         "min_s": 4.0
       },
       "accusations": 5,
-      "reference_viewer": "always"
+      "reference_viewer": "always",
+      "crowd_speedup": {
+        "enabled": false
+      }
     },
     {
       "id": "standard",
@@ -57,7 +60,13 @@
         "min_s": 1.5
       },
       "accusations": 3,
-      "reference_viewer": "always"
+      "reference_viewer": "always",
+      "crowd_speedup": {
+        "enabled": true,
+        "start_ratio": 0.5,
+        "per_step": 0.03,
+        "max_mult": 1.45
+      }
     },
     {
       "id": "hard",
@@ -76,7 +85,13 @@
         "min_s": 1.5
       },
       "accusations": 1,
-      "reference_viewer": "briefing_only"
+      "reference_viewer": "briefing_only",
+      "crowd_speedup": {
+        "enabled": true,
+        "start_ratio": 0.5,
+        "per_step": 0.04,
+        "max_mult": 1.6
+      }
     }
   ]
 }

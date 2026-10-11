@@ -306,6 +306,9 @@ func on_event(e: Dictionary, sim: MatchSim) -> void:
 				_message("흔적: 1분 넘게 지났다")
 			else:
 				_message("흔적: 약 %d초 전" % maxi(int(e["rounded_s"]), 0))
+		"crowd_speed_changed":
+			if bool(e["first"]):
+				_message("남은 사람이 절반 이하다. 사람들의 걸음이 빨라지기 시작한다")
 		"phase_changed":
 			if String(e["to"]) == "HUNT":
 				subtitle("[안내 방송] 탐색 시간이 끝났습니다.", 4.0)
@@ -495,7 +498,7 @@ func _debug_text(sim: MatchSim) -> String:
 	lines.append("[디버그] 시드 %d · 변이 %s · 타겟 #%d(%s)" % [sim.match_seed, sim.setup.variant_id if sim.setup.variant_id != "" else "NONE", sim.target.id, sim.target.type_id])
 	lines.append("단계 %s · 사냥 %s · 피해자 %d · 제거 %d" % [sim.phase_name(), sim.hunter_name(), sim.victim_id, sim.kills])
 	if sim.phase == MatchSim.Phase.HUNT:
-		lines.append("사냥 %.1f초 · 다음 제거 가능 %.1f초 · 기회 공백 %.1f초" % [sim.hunt_time, maxf(0.0, sim.cooldown_ready_at - sim.hunt_time), sim.drought_time])
+		lines.append("사냥 %.1f초 · 다음 제거 가능 %.1f초 · 기회 공백 %.1f초 · 군중 속도 ×%.2f" % [sim.hunt_time, maxf(0.0, sim.cooldown_ready_at - sim.hunt_time), sim.drought_time, sim.crowd_speed_mult])
 	var counts: PackedStringArray = []
 	for t: String in sim.setup.types_used:
 		counts.append("%s %d" % [t, int(sim.setup.type_counts[t])])

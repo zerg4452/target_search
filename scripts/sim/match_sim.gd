@@ -82,6 +82,10 @@ var observe_time: float = 0.0
 var play_time: float = 0.0
 var calls: int = 0
 var fov_base: float = 65.0
+
+# 군중 가속(§7.9): 2단계에서 남은 일반 NPC가 절반 이하가 되면, 한 명 줄 때마다 모든 NPC의 걷는 속도가 오른다.
+var crowd_speed_mult: float = 1.0
+var normals_start: int = 0
 var preset_id: String = ""
 
 var result: Dictionary = {}
@@ -122,6 +126,8 @@ func _init(p_store: DataStore, opts: Dictionary = {}) -> void:
 		n.facing = Vector2.from_angle(n.rng.randf() * TAU)
 		n.idle_left = n.rng.randf_range(float(idle_range[0]), float(idle_range[1]))
 		npcs.append(n)
+		if not n.is_target:
+			normals_start += 1
 		if n.is_target:
 			target = n
 	_update_camera()
@@ -165,6 +171,33 @@ func skip_intro() -> void:
 
 func is_observed(n: NpcState) -> bool:
 	return match_time - n.last_observed_time < float(vis_t["memory_s"])
+
+
+## 지금 모든 NPC(관찰되는 동안의 타겟 포함)가 쓰는 걷기 속도.
+func crowd_walk_speed() -> float:
+	return float(npc_t["walk_speed_mps"]) * crowd_speed_mult
+
+
+## 군중 가속 배율(§7.9). 이 난이도에 기믹이 없거나 아직 절반보다 많이 남았으면 1.
+func crowd_mult_for(remaining: int) -> float:
+	var cfg: Dictionary = preset.get("crowd_speedup", {})
+	if not bool(cfg.get("enabled", false)):
+		return 1.0
+	var half: int = int(floor(float(normals_start) * float(cfg.get("start_ratio", 0.5))))
+	if remaining > half:
+		return 1.0
+	var steps: int = half - remaining + 1
+	return minf(float(cfg.get("max_mult", 1.0)), 1.0 + float(cfg.get("per_step", 0.0)) * steps)
+
+
+func _update_crowd_speed() -> void:
+	if phase != Phase.HUNT:
+		return
+	var m: float = crowd_mult_for(normals_alive())
+	if not is_equal_approx(m, crowd_speed_mult):
+		var first: bool = is_equal_approx(crowd_speed_mult, 1.0)
+		crowd_speed_mult = m
+		_emit({"type": "crowd_speed_changed", "multiplier": m, "first": first, "remaining": normals_alive()})
 
 
 func normals_alive() -> int:
@@ -252,7 +285,7 @@ func _play_tick(inp: PlayerInput) -> void:
 		if n.is_target and phase == Phase.HUNT:
 			_hunter_brain(n)
 		else:
-			n.speed = float(npc_t["walk_speed_mps"])
+			n.speed = crowd_walk_speed()
 			_wander_brain(n)
 	_integrate_npcs()
 	# 5) 상호작용·지목
@@ -462,14 +495,14 @@ func _hunter_brain(n: NpcState) -> void:
 		if h_state == Hunter.STRIKE:
 			strike_elapsed = 0.0
 		h_state = Hunter.DISGUISE
-		n.speed = float(npc_t["walk_speed_mps"])
+		n.speed = crowd_walk_speed()
 		if n.mode == NpcState.Mode.IDLE:
 			n.idle_left -= DT
 			n.stat_idle_time += DT
 			if n.idle_left <= 0.0:
 				_pick_hunter_wander(n)
 		return
-	var fast: float = float(hunt_t["unobserved_speed_mps"])
+	var fast: float = maxf(float(hunt_t["unobserved_speed_mps"]), crowd_walk_speed())
 	if h_state == Hunter.STRIKE:
 		## 피해자 곁에 붙어 따라간다.
 		var v: NpcState = npcs[victim_id]
@@ -641,6 +674,7 @@ func apply_elimination(id: int) -> bool:
 	}
 	traces.append(trace)
 	_emit({"type": "npc_eliminated", "victim": v.id, "by": t.id, "pos": v.pos, "hunt_time": hunt_time, "kills": kills, "trace": trace})
+	_update_crowd_speed()
 	victim_id = -1
 	h_state = Hunter.EXIT
 	strike_elapsed = 0.0
@@ -921,6 +955,7 @@ func _end(outcome: String) -> void:
 		"observe_ratio": observe_time / maxf(play_time, 0.001),
 		"calls": calls,
 		"hunt_time": hunt_time,
+		"crowd_speed_mult": crowd_speed_mult,
 	}
 	if outcome == "WIN":
 		_score()

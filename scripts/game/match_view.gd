@@ -117,7 +117,7 @@ func sync(delta: float) -> void:
 		v.sync_state(n, walk, frozen and not (sim.phase == MatchSim.Phase.BRIEFING))
 		v.set_debug(debug_on, sim.is_observed(n), n.is_target)
 		if not frozen and n.mode == NpcState.Mode.MOVING and delta > 0.0:
-			_step_clock[v.npc_id] += delta
+			_step_clock[v.npc_id] += delta * sim.crowd_speed_mult   ## 군중 가속(§7.9)은 모두에게 같게 박자를 당긴다
 			if _step_clock[v.npc_id] >= STEP_INTERVAL_S:
 				_step_clock[v.npc_id] -= STEP_INTERVAL_S
 				var p3: Vector3 = Vector3(n.pos.x, 0.05, n.pos.y)
