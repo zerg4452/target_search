@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "unobserved_speed_mps": 4.5,
+  "victim_search_radius_m": 15.0,
+  "victim_reselect_s": 0.5,
+  "victim_behind_bonus_m": 4.0,
+  "victim_occluded_bonus_m": 4.0,
+  "kill_range_m": 1.2,
+  "unobserved_before_kill_s": 1.0,
+  "strike_s": 0.4,
+  "exit_distance_m": [
+    2.0,
+    4.0
+  ],
+  "cluster_radius_m": 4.0,
+  "cluster_min_npcs": 3,
+  "trace": {
+    "puddle_diameter_m": 0.9,
+    "puddle_spread_s": 1.5,
+    "footprints": 4,
+    "footprint_spacing_m": 0.75,
+    "footprint_life_s": 20.0,
+    "footprint_fade_s": 2.0,
+    "fresh_fx_s": 20.0,
+    "obstacle_radius_m": 0.45,
+    "inspect_round_s": 10,
+    "sound_range_m": 22.0
+  }
+}

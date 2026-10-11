@@ -1,0 +1,275 @@
+{
+  "version": 2,
+  "variants": [
+    {
+      "id": "VC01_BACKPACK_ONE_STRAP",
+      "name_ko": "백팩을 한쪽 어깨에만 멤",
+      "group": "carry",
+      "kind": "shape",
+      "difficulty": 1,
+      "visible_from": [
+        "back"
+      ],
+      "identify_distance_m": 12.0,
+      "silhouette_change": true,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "backpack",
+        "node": "BackpackOneStrap",
+        "materials": [
+          "mat_backpack_gray"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC02_BEANIE_POMPOM",
+      "name_ko": "비니 위에 방울이 달림",
+      "group": "hair",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": true,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "beanie",
+        "node": "BeaniePompom",
+        "materials": [
+          "mat_beanie_rust"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC03_CARGO_POCKET_MISSING",
+      "name_ko": "왼쪽 허벅지 주머니가 없음",
+      "group": "lower",
+      "kind": "add_remove",
+      "difficulty": 2,
+      "visible_from": [
+        "left"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": true,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "pants",
+        "node": "CargoRightOnly",
+        "materials": [
+          "mat_cargo",
+          "mat_cargo_pocket"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC04_SHOES_LOWTOP",
+      "name_ko": "하이탑 → 로우탑 운동화",
+      "group": "lower",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "shoes",
+        "node": "LowTops",
+        "materials": [
+          "mat_hightop_charcoal",
+          "mat_lace_dark",
+          "mat_sole_white"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC05_SLEEVES_PUSHED",
+      "name_ko": "긴소매를 걷어 올림",
+      "group": "top",
+      "kind": "shape",
+      "difficulty": 2,
+      "visible_from": [
+        "front",
+        "back"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "inner",
+        "node": "SleevesPushed",
+        "materials": [
+          "mat_inner_white"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC06_EARBUD_ONE",
+      "name_ko": "오른쪽 이어폰이 없음",
+      "group": "carry",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "right"
+      ],
+      "identify_distance_m": 6.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "earphones",
+        "node": "EarbudLeftOnly",
+        "materials": [
+          "mat_earbud_black"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC07_VEST_OPEN",
+      "name_ko": "조끼 지퍼가 열려 있음",
+      "group": "top",
+      "kind": "shape",
+      "difficulty": 1,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 14.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "vest",
+        "node": "VestOpen",
+        "materials": [
+          "mat_vest_green",
+          "mat_zip_dark"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC08_PATCH_CIRCLE",
+      "name_ko": "가슴 패치가 사각형 → 원형",
+      "group": "top",
+      "kind": "print",
+      "difficulty": 5,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 3.5,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "vest_patch",
+        "node": "PatchCircle",
+        "materials": [
+          "mat_patch_light"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC09_LACES_WHITE",
+      "name_ko": "어두운 끈 → 흰 끈",
+      "group": "lower",
+      "kind": "color",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_material",
+        "slot": "shoes",
+        "surface": 1,
+        "material": "mat_lace_white"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC10_FACE_SMILE",
+      "name_ko": "무표정 → 옅은 미소",
+      "group": "face",
+      "kind": "expression",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceSmile",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC11_FRINGE_LONG",
+      "name_ko": "앞머리가 길어 눈썹을 덮음",
+      "group": "hair",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "hair",
+        "node": "FringeLong",
+        "materials": [
+          "mat_hair_chestnut"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VC12_MOLE",
+      "name_ko": "왼쪽 눈 밑에 점",
+      "group": "face",
+      "kind": "add_remove",
+      "difficulty": 5,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 3.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceNeutralMole",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    }
+  ]
+}

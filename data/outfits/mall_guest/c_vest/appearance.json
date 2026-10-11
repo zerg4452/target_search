@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "outfit": "mall_guest",
+  "id": "c_vest",
+  "name_ko": "패딩 조끼 손님",
+  "summary_ko": "녹색 패딩 조끼 + 흰 긴소매, 카고 바지, 백팩, 주황 비니, 검정 이어폰",
+  "trace": {
+    "remnants": [
+      {
+        "node": "Remnant_Backpack",
+        "materials": [
+          "mat_backpack_gray"
+        ]
+      },
+      {
+        "node": "Remnant_Beanie",
+        "materials": [
+          "mat_beanie_rust"
+        ]
+      },
+      {
+        "node": "Remnant_VestScrap",
+        "materials": [
+          "mat_vest_green"
+        ]
+      }
+    ],
+    "remnant_count": [
+      2,
+      3
+    ]
+  },
+  "slots": {
+    "body": {
+      "node": "Body",
+      "materials": [
+        "mat_skin"
+      ]
+    },
+    "beanie": {
+      "node": "BeanieFlat",
+      "materials": [
+        "mat_beanie_rust"
+      ]
+    },
+    "hair": {
+      "node": "FringeShort",
+      "materials": [
+        "mat_hair_chestnut"
+      ]
+    },
+    "face": {
+      "node": "FaceNeutral",
+      "materials": [
+        "mat_feature"
+      ]
+    },
+    "inner": {
+      "node": "LongSleeveWhite",
+      "materials": [
+        "mat_inner_white"
+      ]
+    },
+    "vest": {
+      "node": "VestPuffer",
+      "materials": [
+        "mat_vest_green",
+        "mat_zip_dark"
+      ]
+    },
+    "vest_patch": {
+      "node": "PatchSquare",
+      "materials": [
+        "mat_patch_light"
+      ]
+    },
+    "pants": {
+      "node": "CargoBoth",
+      "materials": [
+        "mat_cargo",
+        "mat_cargo_pocket"
+      ]
+    },
+    "shoes": {
+      "node": "HighTops",
+      "materials": [
+        "mat_hightop_charcoal",
+        "mat_lace_dark",
+        "mat_sole_white"
+      ]
+    },
+    "backpack": {
+      "node": "BackpackTwoStraps",
+      "materials": [
+        "mat_backpack_gray"
+      ]
+    },
+    "earphones": {
+      "node": "EarbudsBlack",
+      "materials": [
+        "mat_earbud_black"
+      ]
+    }
+  }
+}

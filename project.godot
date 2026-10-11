@@ -1,0 +1,29 @@
+; Engine configuration file.
+; Godot 4.7.2.stable 기준. 설계 기준은 GAME_DESIGN.md §13.1.
+
+config_version=5
+
+[application]
+
+config/name="틀린 사람 찾기 (M0 그레이박스)"
+config/features=PackedStringArray("4.7", "Forward Plus")
+run/main_scene="res://scenes/main.tscn"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+common/physics_ticks_per_second=60
+
+[rendering]
+
+renderer/rendering_method="forward_plus"

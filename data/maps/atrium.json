@@ -1,0 +1,684 @@
+{
+  "version": 1,
+  "id": "atrium",
+  "name_ko": "에코 몰 아트리움",
+  "concept_ko": "폐장한 쇼핑몰의 중앙 홀",
+  "scene": "res://assets/arena/arena_atrium.glb",
+  "outfit": "mall_guest",
+  "types": [
+    {
+      "id": "a_hoodie",
+      "name_ko": "후드 손님"
+    },
+    {
+      "id": "b_coat",
+      "name_ko": "코트 손님"
+    },
+    {
+      "id": "c_vest",
+      "name_ko": "패딩 조끼 손님"
+    },
+    {
+      "id": "d_suit",
+      "name_ko": "정장 손님"
+    }
+  ],
+  "layout": {
+    "bounds": [
+      -22.0,
+      -16.0,
+      22.0,
+      16.0
+    ],
+    "player_spawn": [
+      0.0,
+      6.0
+    ],
+    "obstacles": [
+      {
+        "id": "P1",
+        "kind": "circle",
+        "center": [
+          -7.0,
+          -12.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P2",
+        "kind": "circle",
+        "center": [
+          7.0,
+          -12.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P3",
+        "kind": "circle",
+        "center": [
+          -13.0,
+          -5.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P4",
+        "kind": "circle",
+        "center": [
+          13.0,
+          -5.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P5",
+        "kind": "circle",
+        "center": [
+          -11.0,
+          5.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P6",
+        "kind": "circle",
+        "center": [
+          11.0,
+          5.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P7",
+        "kind": "circle",
+        "center": [
+          -7.0,
+          12.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "P8",
+        "kind": "circle",
+        "center": [
+          7.0,
+          12.0
+        ],
+        "radius": 0.6,
+        "height": 9.0,
+        "tag": "pillar"
+      },
+      {
+        "id": "K1",
+        "kind": "box",
+        "center": [
+          -17.0,
+          -12.0
+        ],
+        "size": [
+          3.0,
+          1.5
+        ],
+        "height": 2.3,
+        "tag": "kiosk"
+      },
+      {
+        "id": "K2",
+        "kind": "box",
+        "center": [
+          17.0,
+          -12.0
+        ],
+        "size": [
+          3.0,
+          1.5
+        ],
+        "height": 2.3,
+        "tag": "kiosk"
+      },
+      {
+        "id": "K3",
+        "kind": "box",
+        "center": [
+          -17.0,
+          12.0
+        ],
+        "size": [
+          3.0,
+          1.5
+        ],
+        "height": 2.3,
+        "tag": "kiosk"
+      },
+      {
+        "id": "K4",
+        "kind": "box",
+        "center": [
+          17.0,
+          12.0
+        ],
+        "size": [
+          3.0,
+          1.5
+        ],
+        "height": 2.3,
+        "tag": "kiosk"
+      },
+      {
+        "id": "AD1",
+        "kind": "box",
+        "center": [
+          0.0,
+          -12.0
+        ],
+        "size": [
+          4.0,
+          0.3
+        ],
+        "height": 2.5,
+        "tag": "board"
+      },
+      {
+        "id": "AD2",
+        "kind": "box",
+        "center": [
+          0.0,
+          12.0
+        ],
+        "size": [
+          4.0,
+          0.3
+        ],
+        "height": 2.5,
+        "tag": "board"
+      },
+      {
+        "id": "ALC_A_N",
+        "kind": "box",
+        "center": [
+          -20.0,
+          -3.0
+        ],
+        "size": [
+          4.0,
+          0.2
+        ],
+        "height": 3.0,
+        "tag": "alcove_wall"
+      },
+      {
+        "id": "ALC_A_S",
+        "kind": "box",
+        "center": [
+          -20.0,
+          3.0
+        ],
+        "size": [
+          4.0,
+          0.2
+        ],
+        "height": 3.0,
+        "tag": "alcove_wall"
+      },
+      {
+        "id": "ALC_B_N",
+        "kind": "box",
+        "center": [
+          20.0,
+          -3.0
+        ],
+        "size": [
+          4.0,
+          0.2
+        ],
+        "height": 3.0,
+        "tag": "alcove_wall"
+      },
+      {
+        "id": "ALC_B_S",
+        "kind": "box",
+        "center": [
+          20.0,
+          3.0
+        ],
+        "size": [
+          4.0,
+          0.2
+        ],
+        "height": 3.0,
+        "tag": "alcove_wall"
+      },
+      {
+        "id": "ESC",
+        "kind": "box",
+        "center": [
+          0.0,
+          -15.0
+        ],
+        "size": [
+          8.0,
+          2.0
+        ],
+        "height": 3.0,
+        "tag": "escalator"
+      },
+      {
+        "id": "FOUNTAIN",
+        "kind": "circle",
+        "center": [
+          0.0,
+          0.0
+        ],
+        "radius": 3.0,
+        "height": 1.0,
+        "tag": "fountain"
+      },
+      {
+        "id": "BN1",
+        "kind": "box",
+        "center": [
+          -5.0,
+          8.0
+        ],
+        "size": [
+          1.6,
+          0.5
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "BN2",
+        "kind": "box",
+        "center": [
+          5.0,
+          8.0
+        ],
+        "size": [
+          1.6,
+          0.5
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "BN3",
+        "kind": "box",
+        "center": [
+          -5.0,
+          -8.0
+        ],
+        "size": [
+          1.6,
+          0.5
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "BN4",
+        "kind": "box",
+        "center": [
+          5.0,
+          -8.0
+        ],
+        "size": [
+          1.6,
+          0.5
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "BN5",
+        "kind": "box",
+        "center": [
+          -8.0,
+          0.0
+        ],
+        "size": [
+          0.5,
+          1.6
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "BN6",
+        "kind": "box",
+        "center": [
+          8.0,
+          0.0
+        ],
+        "size": [
+          0.5,
+          1.6
+        ],
+        "height": 0.45,
+        "tag": "bench"
+      },
+      {
+        "id": "PL1",
+        "kind": "circle",
+        "center": [
+          -11.0,
+          -9.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL2",
+        "kind": "circle",
+        "center": [
+          11.0,
+          -9.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL3",
+        "kind": "circle",
+        "center": [
+          -11.0,
+          9.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL4",
+        "kind": "circle",
+        "center": [
+          11.0,
+          9.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL5",
+        "kind": "circle",
+        "center": [
+          -20.0,
+          -10.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL6",
+        "kind": "circle",
+        "center": [
+          20.0,
+          -10.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL7",
+        "kind": "circle",
+        "center": [
+          -20.0,
+          10.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "PL8",
+        "kind": "circle",
+        "center": [
+          20.0,
+          10.0
+        ],
+        "radius": 0.5,
+        "height": 1.2,
+        "tag": "planter"
+      },
+      {
+        "id": "S1",
+        "kind": "box",
+        "center": [
+          -6.0,
+          -5.5
+        ],
+        "size": [
+          2.6,
+          0.5
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S2",
+        "kind": "box",
+        "center": [
+          6.0,
+          -5.5
+        ],
+        "size": [
+          2.6,
+          0.5
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S3",
+        "kind": "box",
+        "center": [
+          -6.5,
+          5.0
+        ],
+        "size": [
+          2.6,
+          0.5
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S4",
+        "kind": "box",
+        "center": [
+          6.5,
+          5.0
+        ],
+        "size": [
+          2.6,
+          0.5
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S5",
+        "kind": "box",
+        "center": [
+          -15.0,
+          -7.5
+        ],
+        "size": [
+          0.5,
+          2.6
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S6",
+        "kind": "box",
+        "center": [
+          15.0,
+          -7.5
+        ],
+        "size": [
+          0.5,
+          2.6
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S7",
+        "kind": "box",
+        "center": [
+          -15.0,
+          7.5
+        ],
+        "size": [
+          0.5,
+          2.6
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      },
+      {
+        "id": "S8",
+        "kind": "box",
+        "center": [
+          15.0,
+          7.5
+        ],
+        "size": [
+          0.5,
+          2.6
+        ],
+        "height": 2.4,
+        "tag": "sign"
+      }
+    ]
+  },
+  "lighting": {
+    "sun": {
+      "rotation_deg": [
+        -56.0,
+        32.0,
+        0.0
+      ],
+      "energy": 1.15,
+      "color": [
+        1.0,
+        0.93,
+        0.82
+      ],
+      "shadows": true
+    },
+    "ambient": {
+      "color": [
+        0.86,
+        0.86,
+        0.9
+      ],
+      "energy": 0.62
+    },
+    "background": [
+      0.55,
+      0.6,
+      0.68
+    ],
+    "downlights": {
+      "height": 7.0,
+      "energy": 0.8,
+      "range": 13.0,
+      "color": [
+        1.0,
+        0.95,
+        0.88
+      ],
+      "points": [
+        [
+          -14.0,
+          -8.0
+        ],
+        [
+          0.0,
+          -8.0
+        ],
+        [
+          14.0,
+          -8.0
+        ],
+        [
+          -14.0,
+          8.0
+        ],
+        [
+          0.0,
+          8.0
+        ],
+        [
+          14.0,
+          8.0
+        ],
+        [
+          -19.5,
+          0.0
+        ],
+        [
+          19.5,
+          0.0
+        ]
+      ]
+    },
+    "emergency": {
+      "height": 2.8,
+      "energy": 1.6,
+      "range": 9.0,
+      "color": [
+        1.0,
+        0.16,
+        0.1
+      ],
+      "points": [
+        [
+          -3.0,
+          15.0
+        ],
+        [
+          3.0,
+          15.0
+        ],
+        [
+          -18.5,
+          0.0
+        ],
+        [
+          18.5,
+          0.0
+        ],
+        [
+          0.0,
+          -13.5
+        ]
+      ]
+    },
+    "hunt_dim": 0.85,
+    "flicker_s": 0.5
+  }
+}

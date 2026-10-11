@@ -1,0 +1,265 @@
+{
+  "version": 2,
+  "variants": [
+    {
+      "id": "VD01_BRIEFCASE_MIRROR",
+      "name_ko": "서류 가방을 오른손에 듦",
+      "group": "carry",
+      "kind": "mirror",
+      "difficulty": 1,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 12.0,
+      "silhouette_change": true,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "bag",
+        "node": "BriefcaseRight",
+        "materials": [
+          "mat_briefcase"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD02_TIE_MISSING",
+      "name_ko": "넥타이를 매지 않음",
+      "group": "top",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 6.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "hide",
+        "slot": "tie"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD03_TIE_STRIPED",
+      "name_ko": "넥타이에 사선 줄무늬",
+      "group": "top",
+      "kind": "print",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "right"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "tie",
+        "node": "TieStriped",
+        "materials": [
+          "mat_tie_burgundy",
+          "mat_tie_stripe"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD04_POCKET_SQUARE_MISSING",
+      "name_ko": "가슴 포켓치프가 없음",
+      "group": "top",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "left"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "hide",
+        "slot": "pocket_square"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD05_JACKET_OPEN",
+      "name_ko": "재킷 단추를 풀어 앞이 열림",
+      "group": "top",
+      "kind": "shape",
+      "difficulty": 2,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "jacket",
+        "node": "SuitJacketOpen",
+        "materials": [
+          "mat_suit_navy",
+          "mat_shirt_white"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD06_SHOES_TAN",
+      "name_ko": "검정 구두 → 황갈색 구두",
+      "group": "lower",
+      "kind": "color",
+      "difficulty": 2,
+      "visible_from": [
+        "front",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_material",
+        "slot": "shoes",
+        "surface": 0,
+        "material": "mat_oxford_tan"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD07_PIN_MIRROR",
+      "name_ko": "옷깃 핀이 오른쪽에 있음",
+      "group": "top",
+      "kind": "mirror",
+      "difficulty": 4,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 4.5,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "lapel_pin",
+        "node": "PinRight",
+        "materials": [
+          "mat_pin_gold"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD08_FACE_SMILE",
+      "name_ko": "무표정 → 옅은 미소",
+      "group": "face",
+      "kind": "expression",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceSmile",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD09_HAIR_GLOSS",
+      "name_ko": "무광 머리 → 유광 머리",
+      "group": "hair",
+      "kind": "material",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_material",
+        "slot": "hair",
+        "surface": 0,
+        "material": "mat_hair_dark_gloss"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD10_BROW_FROWN",
+      "name_ko": "눈썹이 찡그린 각도",
+      "group": "face",
+      "kind": "expression",
+      "difficulty": 4,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 4.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceFrown",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD11_MOLE",
+      "name_ko": "왼쪽 눈 밑에 점",
+      "group": "face",
+      "kind": "add_remove",
+      "difficulty": 5,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 3.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceNeutralMole",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VD12_TROUSER_CUFF",
+      "name_ko": "바지 밑단을 접어 올림",
+      "group": "lower",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "pants",
+        "node": "SuitTrousersCuffed",
+        "materials": [
+          "mat_suit_navy"
+        ]
+      },
+      "calibrated": "V-01"
+    }
+  ]
+}

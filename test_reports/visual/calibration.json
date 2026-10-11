@@ -1,0 +1,1101 @@
+{
+  "distances": [
+    16.0,
+    14.0,
+    12.0,
+    10.0,
+    8.5,
+    7.0,
+    6.0,
+    5.0,
+    4.5,
+    4.0,
+    3.5,
+    3.0,
+    2.5,
+    2.0
+  ],
+  "generated": "2026-10-12T02:23:42",
+  "results": {
+    "VA01_BAG_MIRROR": {
+      "back": {
+        "default": 14.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 10.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 8.5,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 10.0,
+        "observe": 16.0
+      }
+    },
+    "VA02_SHOES_LOAFER": {
+      "back": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 7.0,
+        "observe": 16.0
+      }
+    },
+    "VA03_PANTS_ROLLUP": {
+      "back": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 5.0,
+        "observe": 16.0
+      }
+    },
+    "VA04_LOGO_TRIANGLE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 2.5,
+        "observe": 8.5
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 3.0
+      }
+    },
+    "VA05_SLEEVE_ROLLED": {
+      "back": {
+        "default": 4.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 2.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 5.0,
+        "observe": 16.0
+      }
+    },
+    "VA06_WATCH_MIRROR": {
+      "back": {
+        "default": 0.0,
+        "observe": 8.5
+      },
+      "front": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "left": {
+        "default": 2.0,
+        "observe": 8.5
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 8.5
+      }
+    },
+    "VA07_HAIR_PART_MIRROR": {
+      "back": {
+        "default": 0.0,
+        "observe": 6.0
+      },
+      "front": {
+        "default": 4.5,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 2.0,
+        "observe": 10.0
+      },
+      "right": {
+        "default": 2.5,
+        "observe": 8.5
+      }
+    },
+    "VA08_FACE_SMILE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 4.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VA09_HOOD_STRING_ONE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 10.0
+      }
+    },
+    "VA10_LACES_BLACK": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 2.5,
+        "observe": 8.5
+      },
+      "left": {
+        "default": 2.0,
+        "observe": 4.5
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 4.5
+      }
+    },
+    "VA11_HAIR_GLOSS": {
+      "back": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "front": {
+        "default": 2.0,
+        "observe": 8.5
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 8.5
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 10.0
+      }
+    },
+    "VA12_BACK_TEXT_ECH0": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "left": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 10.0
+      }
+    },
+    "VA13_BROW_FROWN": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 4.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VA14_KEYRING_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 7.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 5.0
+      }
+    },
+    "VA15_MOLE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VA16_TAB_MIRROR": {
+      "back": {
+        "default": 0.0,
+        "observe": 3.5
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VA17_CAP": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 6.0,
+        "observe": 16.0
+      }
+    },
+    "VA18_EARBUD_ONE": {
+      "back": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 4.5
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 4.5
+      }
+    },
+    "VA19_POCKET_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 3.0,
+        "observe": 12.0
+      },
+      "right": {
+        "default": 3.0,
+        "observe": 12.0
+      }
+    },
+    "VA20_SOCKS_DARK": {
+      "back": {
+        "default": 3.5,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 4.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 2.5,
+        "observe": 14.0
+      },
+      "right": {
+        "default": 2.5,
+        "observe": 12.0
+      }
+    },
+    "VA21_SOLE_THICK": {
+      "back": {
+        "default": 3.0,
+        "observe": 12.0
+      },
+      "front": {
+        "default": 4.0,
+        "observe": 14.0
+      },
+      "left": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 6.0,
+        "observe": 16.0
+      }
+    },
+    "VA22_BUCKLE_SQUARE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 2.5
+      }
+    },
+    "VA23_HAIR_LONG": {
+      "back": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 7.0,
+        "observe": 16.0
+      }
+    },
+    "VA24_EARRING": {
+      "back": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VB01_TOTE_MIRROR": {
+      "back": {
+        "default": 10.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 10.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 14.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 14.0,
+        "observe": 16.0
+      }
+    },
+    "VB02_GLASSES_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 7.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 5.0
+      }
+    },
+    "VB03_COAT_BELT": {
+      "back": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 5.0,
+        "observe": 16.0
+      }
+    },
+    "VB04_BOOTS": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "left": {
+        "default": 2.5,
+        "observe": 14.0
+      },
+      "right": {
+        "default": 3.0,
+        "observe": 14.0
+      }
+    },
+    "VB05_BUTTONS_GOLD": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 2.0,
+        "observe": 7.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.5
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 4.0
+      }
+    },
+    "VB06_GLASSES_ROUND": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 6.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 2.0
+      }
+    },
+    "VB07_COLLAR_UP": {
+      "back": {
+        "default": 4.5,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 3.0,
+        "observe": 12.0
+      },
+      "left": {
+        "default": 3.5,
+        "observe": 14.0
+      },
+      "right": {
+        "default": 4.0,
+        "observe": 16.0
+      }
+    },
+    "VB08_SCARF_STRIPE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 4.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 7.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 6.0
+      }
+    },
+    "VB09_CUFFED": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 3.0,
+        "observe": 14.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 10.0
+      },
+      "right": {
+        "default": 3.0,
+        "observe": 14.0
+      }
+    },
+    "VB10_FACE_SMILE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VB11_HAIR_GLOSS": {
+      "back": {
+        "default": 3.5,
+        "observe": 12.0
+      },
+      "front": {
+        "default": 2.0,
+        "observe": 7.0
+      },
+      "left": {
+        "default": 3.0,
+        "observe": 12.0
+      },
+      "right": {
+        "default": 3.5,
+        "observe": 12.0
+      }
+    },
+    "VB12_BUTTON_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 2.5
+      }
+    },
+    "VC01_BACKPACK_ONE_STRAP": {
+      "back": {
+        "default": 12.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 6.0,
+        "observe": 16.0
+      }
+    },
+    "VC02_BEANIE_POMPOM": {
+      "back": {
+        "default": 3.5,
+        "observe": 12.0
+      },
+      "front": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 4.5,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 3.5,
+        "observe": 14.0
+      }
+    },
+    "VC03_CARGO_POCKET_MISSING": {
+      "back": {
+        "default": 3.5,
+        "observe": 10.0
+      },
+      "front": {
+        "default": 4.0,
+        "observe": 8.5
+      },
+      "left": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 4.0
+      }
+    },
+    "VC04_SHOES_LOWTOP": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 4.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 3.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 3.5,
+        "observe": 16.0
+      }
+    },
+    "VC05_SLEEVES_PUSHED": {
+      "back": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 5.0,
+        "observe": 16.0
+      }
+    },
+    "VC06_EARBUD_ONE": {
+      "back": {
+        "default": 0.0,
+        "observe": 4.0
+      },
+      "front": {
+        "default": 2.0,
+        "observe": 6.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 4.0
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 7.0
+      }
+    },
+    "VC07_VEST_OPEN": {
+      "back": {
+        "default": 0.0,
+        "observe": 2.5
+      },
+      "front": {
+        "default": 16.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 5.0,
+        "observe": 16.0
+      }
+    },
+    "VC08_PATCH_CIRCLE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.5
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VC09_LACES_WHITE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 3.5,
+        "observe": 12.0
+      },
+      "left": {
+        "default": 2.0,
+        "observe": 4.5
+      },
+      "right": {
+        "default": 2.0,
+        "observe": 4.5
+      }
+    },
+    "VC10_FACE_SMILE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VC11_FRINGE_LONG": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 3.0,
+        "observe": 12.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 7.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 7.0
+      }
+    },
+    "VC12_MOLE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VD01_BRIEFCASE_MIRROR": {
+      "back": {
+        "default": 14.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 14.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 12.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 12.0,
+        "observe": 16.0
+      }
+    },
+    "VD02_TIE_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 7.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 6.0
+      }
+    },
+    "VD03_TIE_STRIPED": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 3.0,
+        "observe": 10.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 4.5
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 5.0
+      }
+    },
+    "VD04_POCKET_SQUARE_MISSING": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 6.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VD05_JACKET_OPEN": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 10.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 10.0
+      }
+    },
+    "VD06_SHOES_TAN": {
+      "back": {
+        "default": 6.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "left": {
+        "default": 7.0,
+        "observe": 16.0
+      },
+      "right": {
+        "default": 7.0,
+        "observe": 16.0
+      }
+    },
+    "VD07_PIN_MIRROR": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 4.5
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 2.0
+      }
+    },
+    "VD08_FACE_SMILE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 5.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VD09_HAIR_GLOSS": {
+      "back": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "front": {
+        "default": 2.0,
+        "observe": 8.5
+      },
+      "left": {
+        "default": 2.5,
+        "observe": 10.0
+      },
+      "right": {
+        "default": 2.5,
+        "observe": 8.5
+      }
+    },
+    "VD10_BROW_FROWN": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 4.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VD11_MOLE": {
+      "back": {
+        "default": 0.0,
+        "observe": 0.0
+      },
+      "front": {
+        "default": 0.0,
+        "observe": 3.0
+      },
+      "left": {
+        "default": 0.0,
+        "observe": 2.0
+      },
+      "right": {
+        "default": 0.0,
+        "observe": 0.0
+      }
+    },
+    "VD12_TROUSER_CUFF": {
+      "back": {
+        "default": 5.0,
+        "observe": 16.0
+      },
+      "front": {
+        "default": 3.0,
+        "observe": 14.0
+      },
+      "left": {
+        "default": 2.5,
+        "observe": 12.0
+      },
+      "right": {
+        "default": 3.5,
+        "observe": 14.0
+      }
+    }
+  }
+}

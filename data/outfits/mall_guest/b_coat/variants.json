@@ -1,0 +1,271 @@
+{
+  "version": 2,
+  "variants": [
+    {
+      "id": "VB01_TOTE_MIRROR",
+      "name_ko": "토트백을 왼손에 듦",
+      "group": "carry",
+      "kind": "mirror",
+      "difficulty": 1,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 10.0,
+      "silhouette_change": true,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "bag",
+        "node": "ToteLeft",
+        "materials": [
+          "mat_tote_brown"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB02_GLASSES_MISSING",
+      "name_ko": "안경을 쓰지 않음",
+      "group": "face",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "hide",
+        "slot": "glasses"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB03_COAT_BELT",
+      "name_ko": "코트에 허리띠를 맴",
+      "group": "top",
+      "kind": "shape",
+      "difficulty": 2,
+      "visible_from": [
+        "front",
+        "back"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "coat",
+        "node": "CoatLongBelted",
+        "materials": [
+          "mat_coat_beige",
+          "mat_belt_brown"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB04_BOOTS",
+      "name_ko": "구두 → 첼시 부츠",
+      "group": "lower",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "back",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "shoes",
+        "node": "ChelseaBoots",
+        "materials": [
+          "mat_shoe_black",
+          "mat_boot_elastic"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB05_BUTTONS_GOLD",
+      "name_ko": "갈색 단추 → 금색 단추",
+      "group": "top",
+      "kind": "color",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_material",
+        "slot": "coat_buttons",
+        "surface": 0,
+        "material": "mat_button_gold"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB06_GLASSES_ROUND",
+      "name_ko": "사각 안경 → 동그란 안경",
+      "group": "face",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 6.0,
+      "silhouette_change": false,
+      "milestone": "M1",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "glasses",
+        "node": "GlassesRound",
+        "materials": [
+          "mat_glasses_black"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB07_COLLAR_UP",
+      "name_ko": "코트 깃을 세움",
+      "group": "top",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": true,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "coat",
+        "node": "CoatCollarUp",
+        "materials": [
+          "mat_coat_beige"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB08_SCARF_STRIPE",
+      "name_ko": "스카프에 줄무늬",
+      "group": "top",
+      "kind": "print",
+      "difficulty": 3,
+      "visible_from": [
+        "front",
+        "left",
+        "right"
+      ],
+      "identify_distance_m": 6.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "scarf",
+        "node": "ScarfStriped",
+        "materials": [
+          "mat_scarf_burgundy",
+          "mat_scarf_stripe"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB09_CUFFED",
+      "name_ko": "바지 밑단을 접어 올림",
+      "group": "lower",
+      "kind": "shape",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "pants",
+        "node": "SlacksCuffed",
+        "materials": [
+          "mat_slacks_black"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB10_FACE_SMILE",
+      "name_ko": "무표정 → 옅은 미소",
+      "group": "face",
+      "kind": "expression",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "face",
+        "node": "FaceSmile",
+        "materials": [
+          "mat_feature"
+        ]
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB11_HAIR_GLOSS",
+      "name_ko": "무광 머리 → 유광 머리",
+      "group": "hair",
+      "kind": "material",
+      "difficulty": 3,
+      "visible_from": [
+        "any"
+      ],
+      "identify_distance_m": 7.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_material",
+        "slot": "hair",
+        "surface": 0,
+        "material": "mat_hair_black_gloss"
+      },
+      "calibrated": "V-01"
+    },
+    {
+      "id": "VB12_BUTTON_MISSING",
+      "name_ko": "단추 하나가 없음 (위에서 세 번째)",
+      "group": "top",
+      "kind": "add_remove",
+      "difficulty": 3,
+      "visible_from": [
+        "front"
+      ],
+      "identify_distance_m": 5.0,
+      "silhouette_change": false,
+      "milestone": "M2",
+      "op": {
+        "type": "swap_mesh",
+        "slot": "coat_buttons",
+        "node": "ButtonsThree",
+        "materials": [
+          "mat_button_brown"
+        ]
+      },
+      "calibrated": "V-01"
+    }
+  ]
+}

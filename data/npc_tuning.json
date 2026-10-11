@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "height_m": 1.72,
+  "capsule_radius_m": 0.3,
+  "walk_speed_mps": 1.25,
+  "turn_speed_dps": 240.0,
+  "wander_distance_m": [3.0, 10.0],
+  "idle_s": [0.5, 3.0],
+  "look_around_chance": 0.15,
+  "call": { "turn_s": 0.4, "hold_s": 2.5 },
+  "avoidance": { "radius_m": 0.45, "neighbor_distance_m": 4.0, "max_neighbors": 8, "time_horizon_s": 1.5 },
+  "stuck": { "repath_s": 1.5, "teleport_s": 5.0 },
+  "spawn": { "candidates": 40, "min_separation_m": 2.5, "min_distance_from_player_m": 5.0 }
+}

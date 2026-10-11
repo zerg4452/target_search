@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "outfit": "mall_guest",
+  "id": "b_coat",
+  "name_ko": "코트 손님",
+  "summary_ko": "베이지 롱코트, 검정 슬랙스, 갈색 토트백(오른손), 사각 안경, 버건디 스카프",
+  "trace": {
+    "remnants": [
+      {
+        "node": "Remnant_Tote",
+        "materials": [
+          "mat_tote_brown"
+        ]
+      },
+      {
+        "node": "Remnant_Glasses",
+        "materials": [
+          "mat_glasses_black"
+        ]
+      },
+      {
+        "node": "Remnant_CoatScrap",
+        "materials": [
+          "mat_coat_beige"
+        ]
+      }
+    ],
+    "remnant_count": [
+      2,
+      3
+    ]
+  },
+  "slots": {
+    "body": {
+      "node": "Body",
+      "materials": [
+        "mat_skin"
+      ]
+    },
+    "hair": {
+      "node": "HairSlick",
+      "materials": [
+        "mat_hair_black"
+      ]
+    },
+    "face": {
+      "node": "FaceNeutral",
+      "materials": [
+        "mat_feature"
+      ]
+    },
+    "glasses": {
+      "node": "GlassesSquare",
+      "materials": [
+        "mat_glasses_black"
+      ]
+    },
+    "coat": {
+      "node": "CoatLong",
+      "materials": [
+        "mat_coat_beige"
+      ]
+    },
+    "coat_buttons": {
+      "node": "ButtonsFour",
+      "materials": [
+        "mat_button_brown"
+      ]
+    },
+    "pants": {
+      "node": "SlacksStraight",
+      "materials": [
+        "mat_slacks_black"
+      ]
+    },
+    "shoes": {
+      "node": "ShoesDerby",
+      "materials": [
+        "mat_shoe_black"
+      ]
+    },
+    "bag": {
+      "node": "ToteRight",
+      "materials": [
+        "mat_tote_brown"
+      ]
+    },
+    "scarf": {
+      "node": "ScarfPlain",
+      "materials": [
+        "mat_scarf_burgundy"
+      ]
+    }
+  }
+}

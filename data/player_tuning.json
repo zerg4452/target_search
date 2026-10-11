@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "walk_speed_mps": 2.2,
+  "run_speed_mps": 4.5,
+  "observe_speed_mps": 1.4,
+  "capsule": { "radius_m": 0.35, "height_m": 1.75 },
+  "camera": {
+    "pivot_height_m": 1.55,
+    "arm_length_m": 3.2,
+    "shoulder_offset_m": 0.5,
+    "fov_deg": 65.0,
+    "pitch_deg": [-70.0, 45.0],
+    "fade_model_within_m": 0.6,
+    "observe": {
+      "arm_length_m": 1.8,
+      "shoulder_offset_m": 0.8,
+      "fov_deg": 30.0,
+      "sensitivity_scale": 0.45,
+      "transition_s": 0.18
+    }
+  },
+  "interaction": {
+    "aim_sphere_radius_m": 0.25,
+    "call_range_m": 3.0,
+    "call_cooldown_s": 1.0,
+    "accuse_range_m": 4.0,
+    "accuse_hold_s": 0.8,
+    "trace_inspect_range_m": 2.0
+  }
+}

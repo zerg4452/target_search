@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "generator": "tools/blender/build_npc_type.py",
+  "outfit": "mall_guest",
+  "type": "player",
+  "skeleton": "NpcSkeleton",
+  "bones": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm_L",
+    "forearm_L",
+    "hand_L",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "upper_arm_R",
+    "forearm_R",
+    "hand_R",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "animations": {
+    "walk": 1.0,
+    "idle": 4.0,
+    "look_around": 2.5,
+    "call_react": 2.9,
+    "wrong_accused": 1.2,
+    "land": 0.8,
+    "reveal": 2.0,
+    "run": 0.66,
+    "accuse_point": 0.5
+  },
+  "nodes": {
+    "Body": {
+      "surfaces": [
+        "mat_skin"
+      ],
+      "tris": 1492,
+      "bones": [
+        "head",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "hand_L",
+        "thigh_L",
+        "shin_L",
+        "upper_arm_R",
+        "forearm_R",
+        "hand_R",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "PlayerHair": {
+      "surfaces": [
+        "mat_hair_brown",
+        "mat_skin"
+      ],
+      "tris": 542,
+      "bones": [
+        "head"
+      ]
+    },
+    "PlayerFace": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "Windbreaker": {
+      "surfaces": [
+        "mat_windbreaker",
+        "mat_zip_dark"
+      ],
+      "tris": 1336,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "PlayerPants": {
+      "surfaces": [
+        "mat_player_pants"
+      ],
+      "tris": 540,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "PlayerShoes": {
+      "surfaces": [
+        "mat_player_shoe",
+        "mat_lace_white",
+        "mat_stripe_gray"
+      ],
+      "tris": 700,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    }
+  },
+  "remnants": {}
+}

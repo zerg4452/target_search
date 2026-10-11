@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "generator": "tools/blender/build_npc_type.py",
+  "outfit": "mall_guest",
+  "type": "d_suit",
+  "skeleton": "NpcSkeleton",
+  "bones": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm_L",
+    "forearm_L",
+    "hand_L",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "upper_arm_R",
+    "forearm_R",
+    "hand_R",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "animations": {
+    "walk": 1.0,
+    "idle": 4.0,
+    "look_around": 2.5,
+    "call_react": 2.9,
+    "wrong_accused": 1.2,
+    "land": 0.8,
+    "reveal": 2.0
+  },
+  "nodes": {
+    "Body": {
+      "surfaces": [
+        "mat_skin"
+      ],
+      "tris": 1492,
+      "bones": [
+        "head",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "hand_L",
+        "thigh_L",
+        "shin_L",
+        "upper_arm_R",
+        "forearm_R",
+        "hand_R",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "HairSuitPart": {
+      "surfaces": [
+        "mat_hair_dark",
+        "mat_skin"
+      ],
+      "tris": 514,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceNeutral": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceSmile": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 384,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceFrown": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceNeutralMole": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 316,
+      "bones": [
+        "head"
+      ]
+    },
+    "SuitJacket": {
+      "surfaces": [
+        "mat_suit_navy",
+        "mat_shirt_white"
+      ],
+      "tris": 1680,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "SuitJacketOpen": {
+      "surfaces": [
+        "mat_suit_navy",
+        "mat_shirt_white"
+      ],
+      "tris": 1808,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "ShirtWhite": {
+      "surfaces": [
+        "mat_shirt_white"
+      ],
+      "tris": 304,
+      "bones": [
+        "neck",
+        "forearm_L",
+        "forearm_R"
+      ]
+    },
+    "TieBurgundy": {
+      "surfaces": [
+        "mat_tie_burgundy"
+      ],
+      "tris": 472,
+      "bones": [
+        "chest"
+      ]
+    },
+    "TieStriped": {
+      "surfaces": [
+        "mat_tie_burgundy",
+        "mat_tie_stripe"
+      ],
+      "tris": 856,
+      "bones": [
+        "chest"
+      ]
+    },
+    "PocketSquare": {
+      "surfaces": [
+        "mat_pocket_white"
+      ],
+      "tris": 136,
+      "bones": [
+        "chest"
+      ]
+    },
+    "PinLeft": {
+      "surfaces": [
+        "mat_pin_gold"
+      ],
+      "tris": 44,
+      "bones": [
+        "chest"
+      ]
+    },
+    "PinRight": {
+      "surfaces": [
+        "mat_pin_gold"
+      ],
+      "tris": 44,
+      "bones": [
+        "chest"
+      ]
+    },
+    "SuitTrousers": {
+      "surfaces": [
+        "mat_suit_navy"
+      ],
+      "tris": 468,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "SuitTrousersCuffed": {
+      "surfaces": [
+        "mat_suit_navy"
+      ],
+      "tris": 556,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "Oxfords": {
+      "surfaces": [
+        "mat_oxford_black"
+      ],
+      "tris": 636,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "BriefcaseLeft": {
+      "surfaces": [
+        "mat_briefcase"
+      ],
+      "tris": 276,
+      "bones": [
+        "hand_L"
+      ]
+    },
+    "BriefcaseRight": {
+      "surfaces": [
+        "mat_briefcase"
+      ],
+      "tris": 276,
+      "bones": [
+        "hand_R"
+      ]
+    }
+  },
+  "remnants": {
+    "Remnant_Briefcase": {
+      "surfaces": [
+        "mat_briefcase"
+      ],
+      "tris": 108
+    },
+    "Remnant_Tie": {
+      "surfaces": [
+        "mat_tie_burgundy"
+      ],
+      "tris": 16
+    },
+    "Remnant_JacketScrap": {
+      "surfaces": [
+        "mat_suit_navy"
+      ],
+      "tris": 40
+    }
+  }
+}

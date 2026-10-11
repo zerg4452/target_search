@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rescue_per_npc": 100,
+  "search_time_bonus_per_s": 10,
+  "accuracy_bonus_by_wrong": { "0": 500, "1": 200 },
+  "grades": [
+    { "grade": "S", "found_in": "SEARCH", "max_wrong": 0 },
+    { "grade": "A", "min_remaining": 20 },
+    { "grade": "B", "min_remaining": 10 },
+    { "grade": "C", "min_remaining": 0 }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "generator": "tools/blender/build_arena_atrium.py",
+  "map": "atrium",
+  "nodes": {
+    "Floor": {
+      "tris": 800
+    },
+    "Walls": {
+      "tris": 204
+    },
+    "Shutters": {
+      "tris": 1740
+    },
+    "ShopSigns": {
+      "tris": 288
+    },
+    "Gallery": {
+      "tris": 2048
+    },
+    "Skylight": {
+      "tris": 192
+    },
+    "OCC_P1": {
+      "tris": 92
+    },
+    "OCC_P2": {
+      "tris": 92
+    },
+    "OCC_P3": {
+      "tris": 92
+    },
+    "OCC_P4": {
+      "tris": 92
+    },
+    "OCC_P5": {
+      "tris": 92
+    },
+    "OCC_P6": {
+      "tris": 92
+    },
+    "OCC_P7": {
+      "tris": 92
+    },
+    "OCC_P8": {
+      "tris": 92
+    },
+    "OCC_K1": {
+      "tris": 12
+    },
+    "OCC_K2": {
+      "tris": 12
+    },
+    "OCC_K3": {
+      "tris": 12
+    },
+    "OCC_K4": {
+      "tris": 12
+    },
+    "OCC_AD1": {
+      "tris": 12
+    },
+    "OCC_AD2": {
+      "tris": 12
+    },
+    "OCC_ALC_A_N": {
+      "tris": 12
+    },
+    "OCC_ALC_A_S": {
+      "tris": 12
+    },
+    "OCC_ALC_B_N": {
+      "tris": 12
+    },
+    "OCC_ALC_B_S": {
+      "tris": 12
+    },
+    "OCC_ESC": {
+      "tris": 12
+    },
+    "OCC_S1": {
+      "tris": 12
+    },
+    "OCC_S2": {
+      "tris": 12
+    },
+    "OCC_S3": {
+      "tris": 12
+    },
+    "OCC_S4": {
+      "tris": 12
+    },
+    "OCC_S5": {
+      "tris": 12
+    },
+    "OCC_S6": {
+      "tris": 12
+    },
+    "OCC_S7": {
+      "tris": 12
+    },
+    "OCC_S8": {
+      "tris": 12
+    },
+    "Decor": {
+      "tris": 9468
+    },
+    "EmergencyStrips": {
+      "tris": 84
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "outfit": "mall_guest",
+  "id": "d_suit",
+  "name_ko": "정장 손님",
+  "summary_ko": "남색 정장, 흰 셔츠와 버건디 넥타이, 서류 가방(왼손), 가슴 포켓치프, 왼쪽 옷깃 핀",
+  "trace": {
+    "remnants": [
+      {
+        "node": "Remnant_Briefcase",
+        "materials": [
+          "mat_briefcase"
+        ]
+      },
+      {
+        "node": "Remnant_Tie",
+        "materials": [
+          "mat_tie_burgundy"
+        ]
+      },
+      {
+        "node": "Remnant_JacketScrap",
+        "materials": [
+          "mat_suit_navy"
+        ]
+      }
+    ],
+    "remnant_count": [
+      2,
+      3
+    ]
+  },
+  "slots": {
+    "body": {
+      "node": "Body",
+      "materials": [
+        "mat_skin"
+      ]
+    },
+    "hair": {
+      "node": "HairSuitPart",
+      "materials": [
+        "mat_hair_dark",
+        "mat_skin"
+      ]
+    },
+    "face": {
+      "node": "FaceNeutral",
+      "materials": [
+        "mat_feature"
+      ]
+    },
+    "jacket": {
+      "node": "SuitJacket",
+      "materials": [
+        "mat_suit_navy",
+        "mat_shirt_white"
+      ]
+    },
+    "shirt": {
+      "node": "ShirtWhite",
+      "materials": [
+        "mat_shirt_white"
+      ]
+    },
+    "tie": {
+      "node": "TieBurgundy",
+      "materials": [
+        "mat_tie_burgundy"
+      ]
+    },
+    "pocket_square": {
+      "node": "PocketSquare",
+      "materials": [
+        "mat_pocket_white"
+      ]
+    },
+    "lapel_pin": {
+      "node": "PinLeft",
+      "materials": [
+        "mat_pin_gold"
+      ]
+    },
+    "pants": {
+      "node": "SuitTrousers",
+      "materials": [
+        "mat_suit_navy"
+      ]
+    },
+    "shoes": {
+      "node": "Oxfords",
+      "materials": [
+        "mat_oxford_black"
+      ]
+    },
+    "bag": {
+      "node": "BriefcaseLeft",
+      "materials": [
+        "mat_briefcase"
+      ]
+    }
+  }
+}

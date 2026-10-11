@@ -1,0 +1,6 @@
+.godot/
+*.tmp
+test_reports/raw/
+*.blend1
+__pycache__/
+*.pyc

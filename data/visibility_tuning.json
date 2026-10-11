@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "tick_hz": 10,
+  "hunter_every_physics_tick": true,
+  "sample_heights_m": [0.15, 1.2, 1.6],
+  "screen_margin_ratio": 0.08,
+  "max_distance_m": 60.0,
+  "memory_s": 0.75,
+  "safe_radius_m": 4.0,
+  "occluder_layer": 4
+}

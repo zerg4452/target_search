@@ -1,0 +1,417 @@
+{
+  "version": 1,
+  "generator": "tools/blender/build_npc_type.py",
+  "outfit": "mall_guest",
+  "type": "a_hoodie",
+  "skeleton": "NpcSkeleton",
+  "bones": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm_L",
+    "forearm_L",
+    "hand_L",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "upper_arm_R",
+    "forearm_R",
+    "hand_R",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "animations": {
+    "walk": 1.0,
+    "idle": 4.0,
+    "look_around": 2.5,
+    "call_react": 2.9,
+    "wrong_accused": 1.2,
+    "land": 0.8,
+    "reveal": 2.0
+  },
+  "nodes": {
+    "Body": {
+      "surfaces": [
+        "mat_skin"
+      ],
+      "tris": 1492,
+      "bones": [
+        "head",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "hand_L",
+        "thigh_L",
+        "shin_L",
+        "upper_arm_R",
+        "forearm_R",
+        "hand_R",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "HairPartLeft": {
+      "surfaces": [
+        "mat_hair_brown",
+        "mat_skin"
+      ],
+      "tris": 542,
+      "bones": [
+        "head"
+      ]
+    },
+    "HairPartRight": {
+      "surfaces": [
+        "mat_hair_brown",
+        "mat_skin"
+      ],
+      "tris": 542,
+      "bones": [
+        "head"
+      ]
+    },
+    "HairLongPartLeft": {
+      "surfaces": [
+        "mat_hair_brown",
+        "mat_skin"
+      ],
+      "tris": 1274,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceNeutral": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceSmile": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 384,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceFrown": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceNeutralMole": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 316,
+      "bones": [
+        "head"
+      ]
+    },
+    "Hoodie": {
+      "surfaces": [
+        "mat_hoodie_gray"
+      ],
+      "tris": 1308,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "HoodieSleeveRolledR": {
+      "surfaces": [
+        "mat_hoodie_gray"
+      ],
+      "tris": 1600,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "KangarooPocket": {
+      "surfaces": [
+        "mat_pocket_gray"
+      ],
+      "tris": 252,
+      "bones": [
+        "spine"
+      ]
+    },
+    "LogoCircle": {
+      "surfaces": [
+        "mat_print_dark",
+        "mat_print_light"
+      ],
+      "tris": 1116,
+      "bones": [
+        "chest"
+      ]
+    },
+    "LogoTriangle": {
+      "surfaces": [
+        "mat_print_dark",
+        "mat_print_light"
+      ],
+      "tris": 300,
+      "bones": [
+        "chest"
+      ]
+    },
+    "BackTextECHO": {
+      "surfaces": [
+        "mat_print_light"
+      ],
+      "tris": 220,
+      "bones": [
+        "chest"
+      ]
+    },
+    "BackTextECH0": {
+      "surfaces": [
+        "mat_print_light"
+      ],
+      "tris": 232,
+      "bones": [
+        "chest"
+      ]
+    },
+    "HoodStringsBoth": {
+      "surfaces": [
+        "mat_string_white"
+      ],
+      "tris": 112,
+      "bones": [
+        "chest"
+      ]
+    },
+    "HoodStringLeftOnly": {
+      "surfaces": [
+        "mat_string_white"
+      ],
+      "tris": 56,
+      "bones": [
+        "chest"
+      ]
+    },
+    "JeansStraight": {
+      "surfaces": [
+        "mat_denim"
+      ],
+      "tris": 1044,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "JeansRolled": {
+      "surfaces": [
+        "mat_denim"
+      ],
+      "tris": 1132,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "TabRight": {
+      "surfaces": [
+        "mat_tab_red"
+      ],
+      "tris": 32,
+      "bones": [
+        "hips"
+      ]
+    },
+    "TabLeft": {
+      "surfaces": [
+        "mat_tab_red"
+      ],
+      "tris": 32,
+      "bones": [
+        "hips"
+      ]
+    },
+    "Socks": {
+      "surfaces": [
+        "mat_sock_white"
+      ],
+      "tris": 88,
+      "bones": [
+        "shin_L",
+        "shin_R"
+      ]
+    },
+    "Sneakers": {
+      "surfaces": [
+        "mat_sneaker_white",
+        "mat_lace_white",
+        "mat_stripe_gray"
+      ],
+      "tris": 700,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "SneakersThickSole": {
+      "surfaces": [
+        "mat_sneaker_white",
+        "mat_lace_white",
+        "mat_stripe_gray"
+      ],
+      "tris": 700,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "Loafers": {
+      "surfaces": [
+        "mat_loafer_brown"
+      ],
+      "tris": 636,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "BagSlingLeft": {
+      "surfaces": [
+        "mat_bag_black",
+        "mat_keyring_yellow"
+      ],
+      "tris": 540,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "BagSlingRight": {
+      "surfaces": [
+        "mat_bag_black",
+        "mat_keyring_yellow"
+      ],
+      "tris": 540,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "BagSlingLeftNoRing": {
+      "surfaces": [
+        "mat_bag_black"
+      ],
+      "tris": 372,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "BagSlingLeftSquareBuckle": {
+      "surfaces": [
+        "mat_bag_black",
+        "mat_keyring_yellow"
+      ],
+      "tris": 420,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "WatchLeft": {
+      "surfaces": [
+        "mat_watch_black"
+      ],
+      "tris": 300,
+      "bones": [
+        "forearm_L"
+      ]
+    },
+    "WatchRight": {
+      "surfaces": [
+        "mat_watch_black"
+      ],
+      "tris": 300,
+      "bones": [
+        "forearm_R"
+      ]
+    },
+    "CapCream": {
+      "surfaces": [
+        "mat_cap_cream"
+      ],
+      "tris": 336,
+      "bones": [
+        "head"
+      ]
+    },
+    "EarbudRight": {
+      "surfaces": [
+        "mat_earbud_white"
+      ],
+      "tris": 128,
+      "bones": [
+        "head"
+      ]
+    },
+    "EarringLeft": {
+      "surfaces": [
+        "mat_earring_gold"
+      ],
+      "tris": 168,
+      "bones": [
+        "head"
+      ]
+    }
+  },
+  "remnants": {
+    "Remnant_SlingBag": {
+      "surfaces": [
+        "mat_bag_black",
+        "mat_keyring_yellow"
+      ],
+      "tris": 436
+    },
+    "Remnant_HoodScrap": {
+      "surfaces": [
+        "mat_hoodie_gray"
+      ],
+      "tris": 40
+    },
+    "Remnant_Sneaker": {
+      "surfaces": [
+        "mat_sneaker_white",
+        "mat_lace_white",
+        "mat_stripe_gray"
+      ],
+      "tris": 350
+    }
+  }
+}

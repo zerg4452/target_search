@@ -1,0 +1,135 @@
+{
+  "version": 2,
+  "outfit": "mall_guest",
+  "id": "a_hoodie",
+  "name_ko": "후드 손님",
+  "summary_ko": "회색 후드티, 남색 청바지, 검정 슬링백(왼쪽 어깨), 왼손 시계, 흰 운동화",
+  "trace": {
+    "remnants": [
+      {
+        "node": "Remnant_SlingBag",
+        "materials": [
+          "mat_bag_black",
+          "mat_keyring_yellow"
+        ]
+      },
+      {
+        "node": "Remnant_HoodScrap",
+        "materials": [
+          "mat_hoodie_gray"
+        ]
+      },
+      {
+        "node": "Remnant_Sneaker",
+        "materials": [
+          "mat_sneaker_white",
+          "mat_lace_white",
+          "mat_stripe_gray"
+        ]
+      }
+    ],
+    "remnant_count": [
+      2,
+      3
+    ]
+  },
+  "slots": {
+    "body": {
+      "node": "Body",
+      "materials": [
+        "mat_skin"
+      ]
+    },
+    "hair": {
+      "node": "HairPartLeft",
+      "materials": [
+        "mat_hair_brown",
+        "mat_skin"
+      ]
+    },
+    "face": {
+      "node": "FaceNeutral",
+      "materials": [
+        "mat_feature"
+      ]
+    },
+    "hat": {
+      "node": "NONE",
+      "materials": []
+    },
+    "ears": {
+      "node": "NONE",
+      "materials": []
+    },
+    "top": {
+      "node": "Hoodie",
+      "materials": [
+        "mat_hoodie_gray"
+      ]
+    },
+    "top_pocket": {
+      "node": "KangarooPocket",
+      "materials": [
+        "mat_pocket_gray"
+      ]
+    },
+    "top_print_front": {
+      "node": "LogoCircle",
+      "materials": [
+        "mat_print_dark",
+        "mat_print_light"
+      ]
+    },
+    "top_print_back": {
+      "node": "BackTextECHO",
+      "materials": [
+        "mat_print_light"
+      ]
+    },
+    "hood_strings": {
+      "node": "HoodStringsBoth",
+      "materials": [
+        "mat_string_white"
+      ]
+    },
+    "pants": {
+      "node": "JeansStraight",
+      "materials": [
+        "mat_denim"
+      ]
+    },
+    "pants_tab": {
+      "node": "TabRight",
+      "materials": [
+        "mat_tab_red"
+      ]
+    },
+    "socks": {
+      "node": "Socks",
+      "materials": [
+        "mat_sock_white"
+      ]
+    },
+    "shoes": {
+      "node": "Sneakers",
+      "materials": [
+        "mat_sneaker_white",
+        "mat_lace_white",
+        "mat_stripe_gray"
+      ]
+    },
+    "bag": {
+      "node": "BagSlingLeft",
+      "materials": [
+        "mat_bag_black",
+        "mat_keyring_yellow"
+      ]
+    },
+    "watch": {
+      "node": "WatchLeft",
+      "materials": [
+        "mat_watch_black"
+      ]
+    }
+  }
+}

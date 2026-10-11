@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "generator": "tools/blender/build_npc_type.py",
+  "outfit": "mall_guest",
+  "type": "b_coat",
+  "skeleton": "NpcSkeleton",
+  "bones": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm_L",
+    "forearm_L",
+    "hand_L",
+    "thigh_L",
+    "shin_L",
+    "foot_L",
+    "upper_arm_R",
+    "forearm_R",
+    "hand_R",
+    "thigh_R",
+    "shin_R",
+    "foot_R"
+  ],
+  "animations": {
+    "walk": 1.0,
+    "idle": 4.0,
+    "look_around": 2.5,
+    "call_react": 2.9,
+    "wrong_accused": 1.2,
+    "land": 0.8,
+    "reveal": 2.0
+  },
+  "nodes": {
+    "Body": {
+      "surfaces": [
+        "mat_skin"
+      ],
+      "tris": 1492,
+      "bones": [
+        "head",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "hand_L",
+        "thigh_L",
+        "shin_L",
+        "upper_arm_R",
+        "forearm_R",
+        "hand_R",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "HairSlick": {
+      "surfaces": [
+        "mat_hair_black"
+      ],
+      "tris": 454,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceNeutral": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 236,
+      "bones": [
+        "head"
+      ]
+    },
+    "FaceSmile": {
+      "surfaces": [
+        "mat_feature"
+      ],
+      "tris": 384,
+      "bones": [
+        "head"
+      ]
+    },
+    "GlassesSquare": {
+      "surfaces": [
+        "mat_glasses_black"
+      ],
+      "tris": 132,
+      "bones": [
+        "head"
+      ]
+    },
+    "GlassesRound": {
+      "surfaces": [
+        "mat_glasses_black"
+      ],
+      "tris": 396,
+      "bones": [
+        "head"
+      ]
+    },
+    "CoatLong": {
+      "surfaces": [
+        "mat_coat_beige"
+      ],
+      "tris": 1372,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "CoatLongBelted": {
+      "surfaces": [
+        "mat_coat_beige",
+        "mat_belt_brown"
+      ],
+      "tris": 1512,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "CoatCollarUp": {
+      "surfaces": [
+        "mat_coat_beige"
+      ],
+      "tris": 1192,
+      "bones": [
+        "hips",
+        "spine",
+        "chest",
+        "neck",
+        "upper_arm_L",
+        "forearm_L",
+        "upper_arm_R",
+        "forearm_R"
+      ]
+    },
+    "ButtonsFour": {
+      "surfaces": [
+        "mat_button_brown"
+      ],
+      "tris": 512,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "ButtonsThree": {
+      "surfaces": [
+        "mat_button_brown"
+      ],
+      "tris": 384,
+      "bones": [
+        "chest",
+        "spine"
+      ]
+    },
+    "SlacksStraight": {
+      "surfaces": [
+        "mat_slacks_black"
+      ],
+      "tris": 468,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "SlacksCuffed": {
+      "surfaces": [
+        "mat_slacks_black"
+      ],
+      "tris": 556,
+      "bones": [
+        "hips",
+        "thigh_L",
+        "shin_L",
+        "thigh_R",
+        "shin_R"
+      ]
+    },
+    "ShoesDerby": {
+      "surfaces": [
+        "mat_shoe_black"
+      ],
+      "tris": 636,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "ChelseaBoots": {
+      "surfaces": [
+        "mat_shoe_black",
+        "mat_boot_elastic"
+      ],
+      "tris": 748,
+      "bones": [
+        "foot_L",
+        "foot_R"
+      ]
+    },
+    "ToteRight": {
+      "surfaces": [
+        "mat_tote_brown"
+      ],
+      "tris": 164,
+      "bones": [
+        "hand_R"
+      ]
+    },
+    "ToteLeft": {
+      "surfaces": [
+        "mat_tote_brown"
+      ],
+      "tris": 164,
+      "bones": [
+        "hand_L"
+      ]
+    },
+    "ScarfPlain": {
+      "surfaces": [
+        "mat_scarf_burgundy"
+      ],
+      "tris": 792,
+      "bones": [
+        "neck",
+        "chest"
+      ]
+    },
+    "ScarfStriped": {
+      "surfaces": [
+        "mat_scarf_burgundy",
+        "mat_scarf_stripe"
+      ],
+      "tris": 1368,
+      "bones": [
+        "neck",
+        "chest"
+      ]
+    }
+  },
+  "remnants": {
+    "Remnant_Tote": {
+      "surfaces": [
+        "mat_tote_brown"
+      ],
+      "tris": 236
+    },
+    "Remnant_Glasses": {
+      "surfaces": [
+        "mat_glasses_black"
+      ],
+      "tris": 132
+    },
+    "Remnant_CoatScrap": {
+      "surfaces": [
+        "mat_coat_beige"
+      ],
+      "tris": 40
+    }
+  }
+}

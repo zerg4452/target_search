@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "milestone": "M2",
+  "recent_variant_exclusion": 3,
+  "max_match_s": 300,
+  "wrong_accusation": {
+    "speed_penalty_ratio": 0.1,
+    "speed_penalty_max": 0.3,
+    "lock_s": 5.0
+  },
+  "hints": {
+    "first_after_hunt_s": 10.0,
+    "interval_s": 10.0,
+    "display_s": 3.0,
+    "fade_out_s": 0.3,
+    "distance_band_edges_m": [
+      5.0,
+      10.0,
+      20.0,
+      30.0
+    ]
+  },
+  "presets": [
+    {
+      "id": "practice",
+      "npc_count": 12,
+      "types_per_match": 2,
+      "min_per_type": 6,
+      "variant_difficulty": [
+        1,
+        2
+      ],
+      "search_time_s": 150,
+      "first_kill_delay_s": 8,
+      "kill_interval": {
+        "start_s": 8.0,
+        "step_s": 0.5,
+        "min_s": 4.0
+      },
+      "accusations": 5,
+      "reference_viewer": "always"
+    },
+    {
+      "id": "standard",
+      "npc_count": 30,
+      "types_per_match": 3,
+      "min_per_type": 6,
+      "variant_difficulty": [
+        1,
+        4
+      ],
+      "search_time_s": 120,
+      "first_kill_delay_s": 5,
+      "kill_interval": {
+        "start_s": 4.0,
+        "step_s": 0.2,
+        "min_s": 1.5
+      },
+      "accusations": 3,
+      "reference_viewer": "always"
+    },
+    {
+      "id": "hard",
+      "npc_count": 30,
+      "types_per_match": 4,
+      "min_per_type": 6,
+      "variant_difficulty": [
+        3,
+        5
+      ],
+      "search_time_s": 90,
+      "first_kill_delay_s": 4,
+      "kill_interval": {
+        "start_s": 4.0,
+        "step_s": 0.15,
+        "min_s": 1.5
+      },
+      "accusations": 1,
+      "reference_viewer": "briefing_only"
+    }
+  ]
+}
