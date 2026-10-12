@@ -8,7 +8,9 @@
       "kind": "mirror",
       "difficulty": 1,
       "visible_from": [
-        "any"
+        "front",
+        "left",
+        "right"
       ],
       "identify_distance_m": 10.0,
       "silhouette_change": true,
@@ -30,11 +32,9 @@
       "kind": "add_remove",
       "difficulty": 3,
       "visible_from": [
-        "front",
-        "left",
-        "right"
+        "front"
       ],
-      "identify_distance_m": 5.0,
+      "identify_distance_m": 7.0,
       "silhouette_change": false,
       "milestone": "M1",
       "op": {
@@ -121,7 +121,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 6.0,
+      "identify_distance_m": 5.0,
       "silhouette_change": false,
       "milestone": "M1",
       "op": {
@@ -167,7 +167,7 @@
         "left",
         "right"
       ],
-      "identify_distance_m": 6.0,
+      "identify_distance_m": 5.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -208,11 +208,11 @@
       "name_ko": "무표정 → 옅은 미소",
       "group": "face",
       "kind": "expression",
-      "difficulty": 3,
+      "difficulty": 5,
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 5.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -220,7 +220,10 @@
         "slot": "face",
         "node": "FaceSmile",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"

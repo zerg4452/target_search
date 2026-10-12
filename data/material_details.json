@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "note": "재질 세부 텍스처(D-33). assets/textures/<이름>_a/_n/_r.png는 tools/generate_textures.py가 만든다. tile_m: 텍스처 한 장이 덮는 길이(m). normal: 노멀 세기. sss: 표면하 산란 세기(피부), rim: 윤곽광(옷감의 보송한 윤기). 둘 다 인물 재질에만 쓴다(D-35). NPC는 메시 UV(상자 투영, 1 UV = 1 m), 아레나는 월드 삼면 투영을 쓴다. 같은 재질 ID는 늘 같은 세부 텍스처를 쓴다(§6.8).",
+  "details": {
+    "knit": {"tile_m": 0.07, "normal": 0.45, "rim": 0.35},
+    "twill": {"tile_m": 0.08, "normal": 0.6, "rim": 0.15},
+    "wool": {"tile_m": 0.10, "normal": 0.5, "rim": 0.4},
+    "suiting": {"tile_m": 0.06, "normal": 0.35, "rim": 0.15},
+    "nylon": {"tile_m": 0.20, "normal": 0.6},
+    "cotton": {"tile_m": 0.05, "normal": 0.35, "rim": 0.2},
+    "leather": {"tile_m": 0.08, "normal": 0.5},
+    "skin": {"tile_m": 0.06, "normal": 0.25, "sss": 0.35, "rim": 0.1},
+    "hair": {"tile_m": 0.08, "normal": 0.8, "rim": 0.15},
+    "smooth": {"tile_m": 1.0, "normal": 0.0},
+    "marble_tile": {"tile_m": 2.0, "normal": 0.6},
+    "plaster": {"tile_m": 2.0, "normal": 0.5},
+    "ceiling_panel": {"tile_m": 1.2, "normal": 0.6},
+    "brushed_metal": {"tile_m": 0.5, "normal": 0.25},
+    "wood": {"tile_m": 0.8, "normal": 0.5},
+    "stone": {"tile_m": 1.0, "normal": 0.5},
+    "terracotta": {"tile_m": 0.6, "normal": 0.6},
+    "leaves": {"tile_m": 0.5, "normal": 1.0},
+    "painted": {"tile_m": 1.0, "normal": 0.3},
+    "water": {"tile_m": 2.5, "normal": 0.25}
+  }
+}

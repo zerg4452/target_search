@@ -19,7 +19,6 @@ var cam: Camera3D
 var debug_on: bool = false
 var _trace_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var _step_clock: Array[float] = []
-var _last_player_pos: Vector2 = Vector2.ZERO
 var _player_anim_name: String = ""
 var _reveal_t: float = -1.0
 var _reveal_outcome: String = ""
@@ -36,7 +35,7 @@ func build(p_store: DataStore, p_sim: MatchSim, p_mats: MaterialCache, p_setting
 	audio = p_audio
 	arena_visual = ArenaVisual.new()
 	add_child(arena_visual)
-	arena_visual.build(sim.layout, store.maps[sim.setup.map_id])
+	arena_visual.build(sim.layout, store.maps[sim.setup.map_id], store, String(settings.values.get("graphics_quality", "")))
 	var vis_rng: RandomNumberGenerator = RngUtil.make(sim.match_seed, "visual_phase")
 	for i: int in sim.npcs.size():
 		var v: NpcVisual = NpcVisual.new()
@@ -54,6 +53,7 @@ func build(p_store: DataStore, p_sim: MatchSim, p_mats: MaterialCache, p_setting
 		var inst: Node = ps.instantiate()
 		player_model.add_child(inst)
 		player_anim = inst.find_child("AnimationPlayer", true, false) as AnimationPlayer
+		_paint_player(inst)
 	cam = Camera3D.new()
 	cam.near = 0.05
 	cam.far = 150.0
@@ -66,8 +66,20 @@ func build(p_store: DataStore, p_sim: MatchSim, p_mats: MaterialCache, p_setting
 	_reveal_overlay.albedo_color = Color(1.0, 0.85, 0.1, 0.6)
 	_reveal_overlay.grow = true
 	_reveal_overlay.grow_amount = 0.006
-	_last_player_pos = sim.player_pos
 	sync(0.0)
+
+
+## 플레이어도 NPC와 같은 방식(팔레트 + 세부 텍스처)으로 칠한다. 표면 이름 = 팔레트 ID(§12.5 이름 계약).
+func _paint_player(inst: Node) -> void:
+	var pal: Dictionary = (store.outfits[sim.setup.outfit_id]["palette"] as Dictionary).duplicate()
+	pal.merge(store.player.get("palette", {}), true)
+	var pm: MaterialCache = MaterialCache.for_store(store, pal)
+	for n: Node in inst.find_children("*", "MeshInstance3D", true, false):
+		var mi: MeshInstance3D = n as MeshInstance3D
+		for i: int in mi.mesh.get_surface_count():
+			var src: Material = mi.mesh.surface_get_material(i)
+			if src != null and pal.has(String(src.resource_name)):
+				mi.set_surface_override_material(i, pm.get_mat(String(src.resource_name)))
 
 
 func on_event(e: Dictionary) -> void:
@@ -138,8 +150,9 @@ func _sync_player(delta: float, frozen: bool) -> void:
 	player_model.visible = not close
 	if player_anim == null or delta <= 0.0:
 		return
-	var spd: float = sim.player_pos.distance_to(_last_player_pos) / delta
-	_last_player_pos = sim.player_pos
+	## 시뮬레이션은 60 Hz, 화면은 그보다 자주 그린다. 프레임 사이 위치 차이로 재면 대부분 0이 되어
+	## 걷기 동작이 매 프레임 처음부터 다시 시작된다. 시뮬레이션이 잰 틱 속도를 쓴다.
+	var spd: float = sim.player_move_speed
 	if frozen:
 		player_anim.speed_scale = 0.0
 		return

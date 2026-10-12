@@ -116,7 +116,6 @@
       "kind": "color",
       "difficulty": 2,
       "visible_from": [
-        "front",
         "left",
         "right"
       ],
@@ -158,11 +157,11 @@
       "name_ko": "무표정 → 옅은 미소",
       "group": "face",
       "kind": "expression",
-      "difficulty": 3,
+      "difficulty": 5,
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 5.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -170,7 +169,10 @@
         "slot": "face",
         "node": "FaceSmile",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -204,7 +206,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 4.0,
+      "identify_distance_m": 4.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -212,7 +214,10 @@
         "slot": "face",
         "node": "FaceFrown",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -226,7 +231,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 3.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -234,7 +239,10 @@
         "slot": "face",
         "node": "FaceNeutralMole",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"

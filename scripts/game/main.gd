@@ -37,6 +37,8 @@ func _ready() -> void:
 	debug_on = args.debug_overlay and OS.is_debug_build()
 	settings = AppSettings.load_from()
 	settings.apply_input()
+	if args.quality != "":
+		settings.values["graphics_quality"] = args.quality   ## 이번 실행만(설정을 저장하면 같이 저장된다)
 	records = Records.load_from()
 	store = DataStore.load_default()
 	audio = AudioDirector.new()
@@ -52,7 +54,7 @@ func _ready() -> void:
 	hud.pause_action.connect(_on_pause_action)
 	pause_settings = SettingsPanel.new()
 	pause_settings.theme = Hud.make_theme()
-	pause_settings.setup(settings)
+	pause_settings.setup(settings, store.graphics)
 	pause_settings.visible = false
 	pause_settings.closed.connect(func() -> void: pause_settings.visible = false)
 	pause_settings.changed.connect(_on_settings_changed)
@@ -90,6 +92,7 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	NpcModel.clear_cache()
+	MaterialCache.clear_textures()
 
 
 func _fresh_seed() -> int:
@@ -103,6 +106,8 @@ func _apply_window_scale() -> void:
 func _on_settings_changed() -> void:
 	audio.apply_volumes(settings)
 	_apply_window_scale()
+	if view != null and is_instance_valid(view) and view.arena_visual != null:
+		view.arena_visual.apply_quality(store.graphics_level(String(settings.values.get("graphics_quality", ""))))
 
 
 # ================================================================ 메뉴 ↔ 판
@@ -154,7 +159,7 @@ func _start_match(seed_value: int, daily: bool, recorded: bool) -> void:
 	sim.pitch = deg_to_rad(args.pitch_deg)
 	if args.skip_intro:
 		sim.skip_intro()
-	mats = MaterialCache.new(store.outfits[sim.setup.outfit_id]["palette"])
+	mats = MaterialCache.for_store(store, store.outfits[sim.setup.outfit_id]["palette"])
 	view = MatchView.new()
 	view.name = "MatchView"
 	add_child(view)

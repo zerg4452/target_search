@@ -14,7 +14,9 @@
 - `scripts/game/`: 표시(3D·HUD·입력). 시뮬레이션 상태를 읽고 이벤트를 받기만 한다.
 - `scripts/core/`: 데이터 읽기·검사, 시드 도우미.
 - `data/`: 모든 수치와 외형·변이 정의. 변이 등급·식별 거리·보이는 방향은 시각 보정(`--calibrate` → `tools/apply_calibration.py`)으로 정한다. 손으로 고치지 않는다.
-- `assets/`: Blender 스크립트(`tools/blender/`)와 `tools/generate_audio.py`가 만든 결과물. glb와 함께 노드 목록(`*.manifest.json`)을 만든다. glb를 손으로 고치지 않는다.
+- `assets/`: Blender 스크립트(`tools/blender/`), `tools/generate_audio.py`, `tools/generate_textures.py`(재질 세부 텍스처·광고판 그림)가 만든 결과물. glb와 함께 노드 목록(`*.manifest.json`)을 만든다. glb와 텍스처를 손으로 고치지 않는다.
+- 인물의 미리 구운 주변광 차폐(꼭짓점 색)는 노드마다 한 번 굽는 고정값이다. 굽는 맥락(기준 인물 + 그 노드)을 바꿀 때는 같은 노드가 NPC마다 달라지지 않게 한다.
+- 재질은 팔레트 ID 단위로 공유한다. 세부 텍스처도 팔레트의 `detail`로만 고르며, 개체마다 다른 무늬·셰이더를 쓰지 않는다. 그래픽 품질 단계는 조명 효과만 바꾸고 형상·재질·변이는 바꾸지 않는다.
 - 아레나 아트의 차폐물은 판정 부피를 빈틈없이 덮는 불투명 `OCC_<id>` 노드여야 한다(T-14).
 - `GAME_DESIGN.md`의 §6.5 카탈로그와 부록 B는 `tools/sync_design_doc.py`가 데이터에서 만든다.
 

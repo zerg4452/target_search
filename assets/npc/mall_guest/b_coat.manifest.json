@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 1492,
+      "tris": 10080,
       "bones": [
         "head",
         "neck",
@@ -57,25 +57,31 @@
       "surfaces": [
         "mat_hair_black"
       ],
-      "tris": 454,
+      "tris": 4193,
       "bones": [
         "head"
       ]
     },
     "FaceNeutral": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceSmile": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 384,
+      "tris": 2692,
       "bones": [
         "head"
       ]
@@ -102,7 +108,7 @@
       "surfaces": [
         "mat_coat_beige"
       ],
-      "tris": 1372,
+      "tris": 6817,
       "bones": [
         "hips",
         "spine",
@@ -118,7 +124,7 @@
         "mat_coat_beige",
         "mat_belt_brown"
       ],
-      "tris": 1512,
+      "tris": 7037,
       "bones": [
         "hips",
         "spine",
@@ -133,7 +139,7 @@
       "surfaces": [
         "mat_coat_beige"
       ],
-      "tris": 1192,
+      "tris": 6801,
       "bones": [
         "hips",
         "spine",
@@ -149,7 +155,7 @@
       "surfaces": [
         "mat_button_brown"
       ],
-      "tris": 512,
+      "tris": 752,
       "bones": [
         "chest",
         "spine"
@@ -159,7 +165,7 @@
       "surfaces": [
         "mat_button_brown"
       ],
-      "tris": 384,
+      "tris": 564,
       "bones": [
         "chest",
         "spine"
@@ -169,7 +175,7 @@
       "surfaces": [
         "mat_slacks_black"
       ],
-      "tris": 468,
+      "tris": 4005,
       "bones": [
         "hips",
         "thigh_L",
@@ -182,7 +188,7 @@
       "surfaces": [
         "mat_slacks_black"
       ],
-      "tris": 556,
+      "tris": 4201,
       "bones": [
         "hips",
         "thigh_L",
@@ -195,7 +201,7 @@
       "surfaces": [
         "mat_shoe_black"
       ],
-      "tris": 636,
+      "tris": 1926,
       "bones": [
         "foot_L",
         "foot_R"
@@ -206,7 +212,7 @@
         "mat_shoe_black",
         "mat_boot_elastic"
       ],
-      "tris": 748,
+      "tris": 2350,
       "bones": [
         "foot_L",
         "foot_R"
@@ -216,7 +222,7 @@
       "surfaces": [
         "mat_tote_brown"
       ],
-      "tris": 164,
+      "tris": 320,
       "bones": [
         "hand_R"
       ]
@@ -225,7 +231,7 @@
       "surfaces": [
         "mat_tote_brown"
       ],
-      "tris": 164,
+      "tris": 320,
       "bones": [
         "hand_L"
       ]

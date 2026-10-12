@@ -1,7 +1,7 @@
 extends SceneTree
 ## 외형 확인용 렌더(창 모드, GPU 필요). 타입 기준 인물이나 변이를 한 줄로 세워 PNG로 저장한다.
 ## 사용: godot --path . --script res://tools/render_type_sheet.gd -- --out=test_reports/m1/sheet.png --view=front
-##       [--specs=a_hoodie,a_hoodie:VA01_BAG_MIRROR,...] [--dist=6] [--fov=40] [--size=1600x900] [--anim=idle] [--t=0]
+##       [--specs=a_hoodie,a_hoodie:VA01_BAG_MIRROR,...] [--dist=6] [--fov=40] [--size=1600x900] [--anim=idle] [--t=0] [--aim=0.95]
 
 var _out: String = "test_reports/sheet.png"
 var _view: String = "front"
@@ -11,6 +11,7 @@ var _fov: float = 40.0
 var _size: Vector2i = Vector2i(1600, 900)
 var _anim: String = "idle"
 var _t: float = 0.0
+var _aim: float = 0.95   ## 카메라가 보는 높이(m). 얼굴 근접은 1.6
 var _frames: int = 0
 var _vp: SubViewport
 
@@ -30,6 +31,7 @@ func _initialize() -> void:
 				_size = Vector2i(int(wh[0]), int(wh[1]))
 			"anim": _anim = v
 			"t": _t = float(v)
+			"aim": _aim = float(v)
 	var store: DataStore = DataStore.load_default()
 	var outfit_id: String = "mall_guest"
 	if _specs.is_empty():
@@ -44,7 +46,7 @@ func _initialize() -> void:
 	var world: Node3D = Node3D.new()
 	_vp.add_child(world)
 	PreviewStage.add_lighting(world)
-	var mats: MaterialCache = MaterialCache.new(store.outfits[outfit_id]["palette"])
+	var mats: MaterialCache = MaterialCache.for_store(store, store.outfits[outfit_id]["palette"])
 	var gap: float = 0.9
 	var x0: float = -gap * (_specs.size() - 1) * 0.5
 	for i: int in _specs.size():
@@ -63,8 +65,8 @@ func _initialize() -> void:
 	cam.fov = _fov
 	world.add_child(cam)
 	var dir: Vector3 = PreviewStage.view_dir(_view)
-	var target: Vector3 = Vector3(0.0, 0.95, 0.0)
-	cam.look_at_from_position(target + dir * _dist + Vector3(0.0, 0.25 if _view != "top" else 0.0, 0.0), target, Vector3.UP)
+	var target: Vector3 = Vector3(0.0, _aim, 0.0)
+	cam.look_at_from_position(target + dir * _dist + Vector3(0.0, 0.25 * minf(_dist / 3.0, 1.0) if _view != "top" else 0.0, 0.0), target, Vector3.UP)
 	cam.current = true
 
 

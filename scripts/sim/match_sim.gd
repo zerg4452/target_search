@@ -45,6 +45,7 @@ var target: NpcState
 var player_pos: Vector2 = Vector2.ZERO
 var player_facing: Vector2 = Vector2(0.0, -1.0)
 var player_speed_mult: float = 1.0
+var player_move_speed: float = 0.0   ## 표시용: 직전 틱에 실제로 움직인 속도(m/s). 애니메이션만 읽는다
 var player_radius: float = 0.35
 var camera: SimCamera = SimCamera.new()
 var yaw: float = 0.0
@@ -274,7 +275,9 @@ func _play_tick(inp: PlayerInput) -> void:
 		observe_time += DT
 	# 2) 플레이어·카메라
 	_look(inp)
+	var before: Vector2 = player_pos
 	_move_player(inp)
+	player_move_speed = player_pos.distance_to(before) / DT
 	_update_camera()
 	# 3) 가시성(10 Hz 분할, 타겟은 매 틱)
 	_update_visibility()

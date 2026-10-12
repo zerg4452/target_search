@@ -22,6 +22,7 @@ var panel: String = ""         ## 메뉴 스크린샷용: codex | records | sett
 var end_as: String = ""        ## 디버그: 1초 뒤 판을 끝낸다 win | lose_all | lose_chances
 var show_reference: bool = false
 var pause_at: float = -1.0
+var quality: String = ""       ## 이번 실행만 그래픽 품질 단계를 바꾼다(저장하지 않음): low | medium | high
 
 
 static func parse(list: PackedStringArray) -> DebugArgs:
@@ -78,6 +79,8 @@ static func parse(list: PackedStringArray) -> DebugArgs:
 				a.show_reference = true
 			"--pause-at":
 				a.pause_at = float(value)
+			"--quality":
+				a.quality = value
 	return a
 
 

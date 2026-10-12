@@ -595,7 +595,7 @@
         0.86,
         0.9
       ],
-      "energy": 0.62
+      "energy": 0.45
     },
     "background": [
       0.55,
@@ -604,8 +604,8 @@
     ],
     "downlights": {
       "height": 7.0,
-      "energy": 0.8,
-      "range": 13.0,
+      "energy": 1.15,
+      "range": 15.0,
       "color": [
         1.0,
         0.95,
@@ -679,6 +679,164 @@
       ]
     },
     "hunt_dim": 0.85,
-    "flicker_s": 0.5
+    "flicker_s": 0.5,
+    "ambient_note": "ambient.energy는 '높음'(간접광 SDFGI 켬) 기준. 낮은 단계는 data/graphics_quality.json의 ambient_scale을 곱한다.",
+    "environment": {
+      "tonemap": "agx",
+      "exposure": 1.3,
+      "white": 6.0,
+      "ssao": {
+        "radius": 1.0,
+        "intensity": 2.2,
+        "power": 1.6,
+        "detail": 0.6
+      },
+      "ssil": {
+        "radius": 5.0,
+        "intensity": 0.8
+      },
+      "sdfgi": {
+        "energy": 1.0,
+        "bounce_feedback": 0.45,
+        "min_cell_size": 0.2,
+        "cascades": 4
+      },
+      "ssr": {
+        "max_steps": 56,
+        "fade_in": 0.15,
+        "fade_out": 2.0,
+        "depth_tolerance": 0.2
+      },
+      "glow": {
+        "intensity": 0.55,
+        "bloom": 0.05,
+        "hdr_threshold": 1.0,
+        "strength": 1.0
+      },
+      "fog": {
+        "density": 0.006,
+        "albedo": [
+          1.0,
+          0.97,
+          0.92
+        ],
+        "anisotropy": 0.55,
+        "length": 48.0,
+        "sun_energy": 2.5
+      },
+      "adjust": {
+        "contrast": 1.05,
+        "saturation": 1.12
+      }
+    },
+    "reflection_probe": {
+      "center": [
+        0.0,
+        4.5,
+        0.0
+      ],
+      "size": [
+        44.0,
+        9.0,
+        32.0
+      ],
+      "intensity": 1.0
+    },
+    "shop_lights": {
+      "energy": 1.4,
+      "range": 6.0,
+      "color": [
+        1.0,
+        0.9,
+        0.76
+      ],
+      "note": "열린 가게 내부 조명. glb의 ShopLight_* 자리에 둔다. 2단계 밝기 감소를 같이 받는다."
+    }
+  },
+  "art": {
+    "note": "아레나 재질 세부 텍스처(D-33). glb 재질 이름 → data/material_details.json의 detail. 월드 좌표 삼면 투영이라 메시 UV가 필요 없다. no_shadow_nodes는 그림자를 드리우지 않는 장식(차폐물이 아님). screens: 광고판·안내판 화면 재질 → assets/textures/<그림>.png(빛나는 화면, generate_textures.py). open_shops: 셔터 대신 유리 진열창과 불 켜진 내부를 보이는 1층 가게 번호(북쪽 벽부터 0). glass_materials: 반투명 유리. water_jet_material: 흘러내리는 분수 물.",
+    "materials": {
+      "floor_light": "marble_tile",
+      "floor_dark": "marble_tile",
+      "floor_inlay": "stone",
+      "wall_plaster": "plaster",
+      "pilaster": "plaster",
+      "ceiling": "ceiling_panel",
+      "gallery": "plaster",
+      "alcove_wall": "plaster",
+      "shutter": "brushed_metal",
+      "shutter_dark": "brushed_metal",
+      "rail": "brushed_metal",
+      "metal_dark": "brushed_metal",
+      "pillar_trim": "brushed_metal",
+      "board_frame": "brushed_metal",
+      "escalator": "brushed_metal",
+      "escalator_panel": "brushed_metal",
+      "lamp_shade": "brushed_metal",
+      "sign_band": "painted",
+      "pillar": "painted",
+      "kiosk_red": "painted",
+      "kiosk_blue": "painted",
+      "kiosk_green": "painted",
+      "kiosk_orange": "painted",
+      "barrier": "painted",
+      "counter": "stone",
+      "fountain_stone": "stone",
+      "bench_wood": "wood",
+      "planter": "terracotta",
+      "foliage": "leaves",
+      "water": "water",
+      "shop_floor": "wood",
+      "shop_wall": "plaster",
+      "shop_shelf": "painted",
+      "beam": "plaster",
+      "prod_1": "painted",
+      "prod_2": "painted",
+      "prod_3": "painted",
+      "prod_4": "painted",
+      "prod_5": "painted",
+      "prod_6": "painted"
+    },
+    "water_material": "water",
+    "water_flow_mps": [
+      0.025,
+      0.012
+    ],
+    "no_shadow_nodes": [
+      "SkylightGlass",
+      "Lamps",
+      "ShopGlass",
+      "GalleryGlass",
+      "FountainWater",
+      "ShopInteriors",
+      "ShopFrames",
+      "GalleryDecor",
+      "CeilingBeams",
+      "Screens"
+    ],
+    "screens": {
+      "screen_sale": "poster_sale",
+      "screen_season": "poster_season",
+      "screen_directory": "poster_directory",
+      "screen_wayfinding": "poster_wayfinding",
+      "menu_coffee": "menu_coffee",
+      "menu_juice": "menu_juice",
+      "menu_icecream": "menu_icecream",
+      "menu_phone": "menu_phone"
+    },
+    "screen_energy": 1.0,
+    "open_shops": [
+      0,
+      2,
+      4,
+      7,
+      9,
+      11
+    ],
+    "glass_materials": [
+      "glass"
+    ],
+    "water_jet_material": "water_jet",
+    "water_jet_flow_mps": 0.6
   }
 }

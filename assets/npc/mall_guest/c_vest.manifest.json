@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 1492,
+      "tris": 10080,
       "bones": [
         "head",
         "neck",
@@ -57,7 +57,7 @@
       "surfaces": [
         "mat_beanie_rust"
       ],
-      "tris": 180,
+      "tris": 281,
       "bones": [
         "head"
       ]
@@ -66,7 +66,7 @@
       "surfaces": [
         "mat_beanie_rust"
       ],
-      "tris": 348,
+      "tris": 551,
       "bones": [
         "head"
       ]
@@ -75,7 +75,7 @@
       "surfaces": [
         "mat_hair_chestnut"
       ],
-      "tris": 72,
+      "tris": 860,
       "bones": [
         "head"
       ]
@@ -84,34 +84,43 @@
       "surfaces": [
         "mat_hair_chestnut"
       ],
-      "tris": 88,
+      "tris": 888,
       "bones": [
         "head"
       ]
     },
     "FaceNeutral": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceSmile": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 384,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceNeutralMole": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 316,
+      "tris": 2812,
       "bones": [
         "head"
       ]
@@ -120,7 +129,7 @@
       "surfaces": [
         "mat_inner_white"
       ],
-      "tris": 780,
+      "tris": 3852,
       "bones": [
         "hips",
         "spine",
@@ -135,7 +144,7 @@
       "surfaces": [
         "mat_inner_white"
       ],
-      "tris": 1364,
+      "tris": 4192,
       "bones": [
         "hips",
         "spine",
@@ -151,7 +160,7 @@
         "mat_vest_green",
         "mat_zip_dark"
       ],
-      "tris": 1126,
+      "tris": 1622,
       "bones": [
         "hips",
         "spine",
@@ -164,7 +173,7 @@
         "mat_vest_green",
         "mat_zip_dark"
       ],
-      "tris": 1210,
+      "tris": 1706,
       "bones": [
         "hips",
         "spine",
@@ -185,7 +194,7 @@
       "surfaces": [
         "mat_patch_light"
       ],
-      "tris": 444,
+      "tris": 636,
       "bones": [
         "chest"
       ]
@@ -195,7 +204,7 @@
         "mat_cargo",
         "mat_cargo_pocket"
       ],
-      "tris": 684,
+      "tris": 3807,
       "bones": [
         "hips",
         "thigh_L",
@@ -209,7 +218,7 @@
         "mat_cargo",
         "mat_cargo_pocket"
       ],
-      "tris": 576,
+      "tris": 3483,
       "bones": [
         "hips",
         "thigh_L",
@@ -224,7 +233,7 @@
         "mat_lace_dark",
         "mat_sole_white"
       ],
-      "tris": 724,
+      "tris": 2682,
       "bones": [
         "foot_L",
         "foot_R"
@@ -236,7 +245,7 @@
         "mat_lace_dark",
         "mat_sole_white"
       ],
-      "tris": 652,
+      "tris": 2406,
       "bones": [
         "foot_L",
         "foot_R"
@@ -264,7 +273,7 @@
       "surfaces": [
         "mat_earbud_black"
       ],
-      "tris": 320,
+      "tris": 776,
       "bones": [
         "head",
         "neck",
@@ -275,7 +284,7 @@
       "surfaces": [
         "mat_earbud_black"
       ],
-      "tris": 160,
+      "tris": 388,
       "bones": [
         "head",
         "neck",
@@ -294,7 +303,7 @@
       "surfaces": [
         "mat_beanie_rust"
       ],
-      "tris": 180
+      "tris": 281
     },
     "Remnant_VestScrap": {
       "surfaces": [

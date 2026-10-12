@@ -8,11 +8,9 @@
       "kind": "mirror",
       "difficulty": 1,
       "visible_from": [
-        "front",
-        "back",
-        "right"
+        "back"
       ],
-      "identify_distance_m": 10.0,
+      "identify_distance_m": 14.0,
       "silhouette_change": true,
       "milestone": "M1",
       "op": {
@@ -55,10 +53,9 @@
       "name_ko": "바지 밑단을 접어 올림",
       "group": "lower",
       "kind": "shape",
-      "difficulty": 2,
+      "difficulty": 3,
       "visible_from": [
-        "front",
-        "back"
+        "any"
       ],
       "identify_distance_m": 7.0,
       "silhouette_change": true,
@@ -149,7 +146,9 @@
       "kind": "mirror",
       "difficulty": 3,
       "visible_from": [
-        "any"
+        "front",
+        "left",
+        "right"
       ],
       "identify_distance_m": 6.0,
       "silhouette_change": false,
@@ -170,11 +169,11 @@
       "name_ko": "무표정 → 옅은 미소",
       "group": "face",
       "kind": "expression",
-      "difficulty": 4,
+      "difficulty": 5,
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 4.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M1",
       "op": {
@@ -182,7 +181,10 @@
         "slot": "face",
         "node": "FaceSmile",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -217,7 +219,9 @@
       "kind": "color",
       "difficulty": 3,
       "visible_from": [
-        "front"
+        "front",
+        "left",
+        "right"
       ],
       "identify_distance_m": 7.0,
       "silhouette_change": false,
@@ -283,7 +287,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 4.0,
+      "identify_distance_m": 4.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -291,7 +295,10 @@
         "slot": "face",
         "node": "FaceFrown",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -329,7 +336,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 3.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -337,7 +344,10 @@
         "slot": "face",
         "node": "FaceNeutralMole",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -347,11 +357,11 @@
       "name_ko": "뒷주머니 탭이 왼쪽에 있음",
       "group": "lower",
       "kind": "mirror",
-      "difficulty": 5,
+      "difficulty": 3,
       "visible_from": [
         "back"
       ],
-      "identify_distance_m": 3.5,
+      "identify_distance_m": 5.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -396,7 +406,7 @@
         "front",
         "right"
       ],
-      "identify_distance_m": 4.5,
+      "identify_distance_m": 4.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -414,11 +424,13 @@
       "name_ko": "후드티 앞주머니가 없음",
       "group": "top",
       "kind": "add_remove",
-      "difficulty": 2,
+      "difficulty": 3,
       "visible_from": [
-        "front"
+        "front",
+        "left",
+        "right"
       ],
-      "identify_distance_m": 7.0,
+      "identify_distance_m": 6.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -479,6 +491,7 @@
       "difficulty": 5,
       "visible_from": [
         "front",
+        "left",
         "right"
       ],
       "identify_distance_m": 2.5,
@@ -502,7 +515,6 @@
       "kind": "shape",
       "difficulty": 2,
       "visible_from": [
-        "front",
         "left",
         "right"
       ],

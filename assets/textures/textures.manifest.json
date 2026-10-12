@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generator": "tools/generate_textures.py",
+  "textures": {
+    "knit": {
+      "albedo_linear_mean": 0.93331
+    },
+    "twill": {
+      "albedo_linear_mean": 0.93135
+    },
+    "wool": {
+      "albedo_linear_mean": 0.95477
+    },
+    "suiting": {
+      "albedo_linear_mean": 0.95284
+    },
+    "nylon": {
+      "albedo_linear_mean": 0.95515
+    },
+    "cotton": {
+      "albedo_linear_mean": 0.95469
+    },
+    "leather": {
+      "albedo_linear_mean": 0.93331
+    },
+    "skin": {
+      "albedo_linear_mean": 0.97699
+    },
+    "hair": {
+      "albedo_linear_mean": 0.91147
+    },
+    "smooth": {
+      "albedo_linear_mean": 1.0
+    },
+    "marble_tile": {
+      "albedo_linear_mean": 0.87629
+    },
+    "plaster": {
+      "albedo_linear_mean": 0.9551
+    },
+    "ceiling_panel": {
+      "albedo_linear_mean": 0.94406
+    },
+    "brushed_metal": {
+      "albedo_linear_mean": 0.93326
+    },
+    "wood": {
+      "albedo_linear_mean": 0.75143
+    },
+    "stone": {
+      "albedo_linear_mean": 0.91129
+    },
+    "terracotta": {
+      "albedo_linear_mean": 0.91154
+    },
+    "leaves": {
+      "albedo_linear_mean": 0.82932
+    },
+    "painted": {
+      "albedo_linear_mean": 0.97702
+    },
+    "water": {
+      "albedo_linear_mean": 1.0
+    }
+  }
+}

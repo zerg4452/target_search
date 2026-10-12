@@ -39,7 +39,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 1492,
+      "tris": 10080,
       "bones": [
         "head",
         "neck",
@@ -60,16 +60,19 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 542,
+      "tris": 3899,
       "bones": [
         "head"
       ]
     },
     "PlayerFace": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
@@ -79,7 +82,7 @@
         "mat_windbreaker",
         "mat_zip_dark"
       ],
-      "tris": 1336,
+      "tris": 4686,
       "bones": [
         "hips",
         "spine",
@@ -95,7 +98,7 @@
       "surfaces": [
         "mat_player_pants"
       ],
-      "tris": 540,
+      "tris": 2775,
       "bones": [
         "hips",
         "thigh_L",
@@ -110,7 +113,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 700,
+      "tris": 2454,
       "bones": [
         "foot_L",
         "foot_R"

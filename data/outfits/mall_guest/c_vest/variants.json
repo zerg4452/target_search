@@ -10,7 +10,7 @@
       "visible_from": [
         "back"
       ],
-      "identify_distance_m": 12.0,
+      "identify_distance_m": 10.0,
       "silhouette_change": true,
       "milestone": "M1",
       "op": {
@@ -125,7 +125,7 @@
         "front",
         "right"
       ],
-      "identify_distance_m": 6.0,
+      "identify_distance_m": 7.0,
       "silhouette_change": false,
       "milestone": "M1",
       "op": {
@@ -166,11 +166,11 @@
       "name_ko": "가슴 패치가 사각형 → 원형",
       "group": "top",
       "kind": "print",
-      "difficulty": 5,
+      "difficulty": 4,
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 3.5,
+      "identify_distance_m": 4.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -190,7 +190,9 @@
       "kind": "color",
       "difficulty": 3,
       "visible_from": [
-        "front"
+        "front",
+        "left",
+        "right"
       ],
       "identify_distance_m": 7.0,
       "silhouette_change": false,
@@ -208,11 +210,11 @@
       "name_ko": "무표정 → 옅은 미소",
       "group": "face",
       "kind": "expression",
-      "difficulty": 3,
+      "difficulty": 5,
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 5.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -220,7 +222,10 @@
         "slot": "face",
         "node": "FaceSmile",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"
@@ -258,7 +263,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 3.0,
+      "identify_distance_m": 2.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -266,7 +271,10 @@
         "slot": "face",
         "node": "FaceNeutralMole",
         "materials": [
-          "mat_feature"
+          "mat_feature",
+          "mat_eye_white",
+          "mat_iris",
+          "mat_lip"
         ]
       },
       "calibrated": "V-01"

@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 1492,
+      "tris": 10080,
       "bones": [
         "head",
         "neck",
@@ -58,43 +58,55 @@
         "mat_hair_dark",
         "mat_skin"
       ],
-      "tris": 514,
+      "tris": 3483,
       "bones": [
         "head"
       ]
     },
     "FaceNeutral": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceSmile": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 384,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceFrown": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceNeutralMole": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 316,
+      "tris": 2812,
       "bones": [
         "head"
       ]
@@ -104,7 +116,7 @@
         "mat_suit_navy",
         "mat_shirt_white"
       ],
-      "tris": 1680,
+      "tris": 6736,
       "bones": [
         "hips",
         "spine",
@@ -120,7 +132,7 @@
         "mat_suit_navy",
         "mat_shirt_white"
       ],
-      "tris": 1808,
+      "tris": 6768,
       "bones": [
         "hips",
         "spine",
@@ -135,7 +147,7 @@
       "surfaces": [
         "mat_shirt_white"
       ],
-      "tris": 304,
+      "tris": 344,
       "bones": [
         "neck",
         "forearm_L",
@@ -174,7 +186,7 @@
       "surfaces": [
         "mat_pin_gold"
       ],
-      "tris": 44,
+      "tris": 64,
       "bones": [
         "chest"
       ]
@@ -183,7 +195,7 @@
       "surfaces": [
         "mat_pin_gold"
       ],
-      "tris": 44,
+      "tris": 64,
       "bones": [
         "chest"
       ]
@@ -192,7 +204,7 @@
       "surfaces": [
         "mat_suit_navy"
       ],
-      "tris": 468,
+      "tris": 4065,
       "bones": [
         "hips",
         "thigh_L",
@@ -205,7 +217,7 @@
       "surfaces": [
         "mat_suit_navy"
       ],
-      "tris": 556,
+      "tris": 4261,
       "bones": [
         "hips",
         "thigh_L",
@@ -218,7 +230,7 @@
       "surfaces": [
         "mat_oxford_black"
       ],
-      "tris": 636,
+      "tris": 1926,
       "bones": [
         "foot_L",
         "foot_R"

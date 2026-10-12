@@ -1,5 +1,11 @@
 {
   "version": 1,
+  "palette_note": "플레이어 전용 재질(노란 바람막이 등). tools/blender/build_npc_type.py --player가 외형 세트 팔레트에 이 값을 더해 player.glb를 만들고, 게임은 같은 값으로 재질을 덮어쓴다(D-33).",
+  "palette": {
+    "mat_windbreaker": {"color": [1.0, 0.80, 0.08], "roughness": 0.45, "detail": "nylon"},
+    "mat_player_pants": {"color": [0.12, 0.12, 0.13], "roughness": 0.85, "detail": "twill"},
+    "mat_player_shoe": {"color": [0.55, 0.56, 0.58], "roughness": 0.7, "detail": "leather"}
+  },
   "walk_speed_mps": 2.2,
   "run_speed_mps": 4.5,
   "observe_speed_mps": 1.4,

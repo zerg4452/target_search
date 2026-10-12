@@ -12,7 +12,8 @@ var _fov_label: Label
 var _sens_label: Label
 
 
-func setup(p_settings: AppSettings) -> void:
+## graphics: data/graphics_quality.json(DataStore.graphics). 비면 그래픽 품질 줄을 만들지 않는다.
+func setup(p_settings: AppSettings, graphics: Dictionary = {}) -> void:
 	settings = p_settings
 	var root: VBoxContainer = VBoxContainer.new()
 	root.add_theme_constant_override("separation", 10)
@@ -61,6 +62,25 @@ func setup(p_settings: AppSettings) -> void:
 		_commit())
 	ui_row.add_child(ob)
 	left.add_child(ui_row)
+	var order: Array = graphics.get("order", [])
+	if not order.is_empty():
+		var g_row: HBoxContainer = HBoxContainer.new()
+		var g_l: Label = Label.new()
+		g_l.text = "그래픽 품질"
+		g_l.custom_minimum_size = Vector2(160, 0)
+		g_row.add_child(g_l)
+		var gb: OptionButton = OptionButton.new()
+		var cur: String = String(settings.values.get("graphics_quality", ""))
+		if cur == "":
+			cur = String(graphics.get("default", ""))
+		for gid: Variant in order:
+			gb.add_item(String(graphics["levels"][String(gid)].get("name_ko", gid)))
+		gb.select(maxi(order.find(cur), 0))
+		gb.item_selected.connect(func(i: int) -> void:
+			settings.values["graphics_quality"] = String(order[i])
+			_commit())
+		g_row.add_child(gb)
+		left.add_child(g_row)
 	var kt: Label = Label.new()
 	kt.text = "키 재지정 (버튼을 누른 뒤 새 키를 누른다)"
 	right.add_child(kt)

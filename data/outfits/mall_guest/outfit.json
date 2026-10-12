@@ -2,16 +2,17 @@
   "version": 2,
   "id": "mall_guest",
   "name_ko": "쇼핑몰 손님",
-  "note": "에코 몰 아트리움의 NPC 외형 세트(§1.4, §6.1). tools/blender/build_npc_type.py가 이 팔레트로 glb와 노드 목록(manifest)을 만든다. 색은 sRGB 알베도.",
+  "note": "에코 몰 아트리움의 NPC 외형 세트(§1.4, §6.1). tools/blender/build_npc_type.py가 이 팔레트로 glb와 노드 목록(manifest)을 만든다. 색은 sRGB 알베도. detail: 재질 세부 텍스처 이름(data/material_details.json, D-33).",
   "asset_dir": "res://assets/npc/mall_guest",
   "palette": {
     "mat_skin": {
       "color": [
-        0.8,
-        0.74,
-        0.68
+        0.82,
+        0.72,
+        0.64
       ],
-      "roughness": 0.6
+      "roughness": 0.6,
+      "detail": "skin"
     },
     "mat_feature": {
       "color": [
@@ -19,7 +20,35 @@
         0.08,
         0.08
       ],
-      "roughness": 0.6
+      "roughness": 0.6,
+      "detail": "smooth"
+    },
+    "mat_eye_white": {
+      "color": [
+        0.9,
+        0.89,
+        0.86
+      ],
+      "roughness": 0.25,
+      "detail": "smooth"
+    },
+    "mat_iris": {
+      "color": [
+        0.24,
+        0.15,
+        0.09
+      ],
+      "roughness": 0.2,
+      "detail": "smooth"
+    },
+    "mat_lip": {
+      "color": [
+        0.74,
+        0.56,
+        0.52
+      ],
+      "roughness": 0.45,
+      "detail": "skin"
     },
     "mat_hair_brown": {
       "color": [
@@ -27,7 +56,8 @@
         0.16,
         0.11
       ],
-      "roughness": 0.85
+      "roughness": 0.85,
+      "detail": "hair"
     },
     "mat_hair_brown_gloss": {
       "color": [
@@ -36,7 +66,8 @@
         0.11
       ],
       "roughness": 0.28,
-      "specular": 0.9
+      "specular": 0.9,
+      "detail": "hair"
     },
     "mat_hoodie_gray": {
       "color": [
@@ -44,7 +75,8 @@
         0.55,
         0.56
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "knit"
     },
     "mat_print_dark": {
       "color": [
@@ -52,7 +84,8 @@
         0.12,
         0.14
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "smooth"
     },
     "mat_print_light": {
       "color": [
@@ -60,7 +93,8 @@
         0.93,
         0.92
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "smooth"
     },
     "mat_string_white": {
       "color": [
@@ -68,7 +102,8 @@
         0.94,
         0.93
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_denim": {
       "color": [
@@ -76,7 +111,8 @@
         0.2,
         0.34
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "twill"
     },
     "mat_tab_red": {
       "color": [
@@ -84,7 +120,8 @@
         0.12,
         0.1
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "cotton"
     },
     "mat_sneaker_white": {
       "color": [
@@ -92,7 +129,8 @@
         0.92,
         0.91
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "leather"
     },
     "mat_lace_white": {
       "color": [
@@ -100,7 +138,8 @@
         0.97,
         0.97
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_lace_black": {
       "color": [
@@ -108,7 +147,8 @@
         0.06,
         0.06
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_stripe_gray": {
       "color": [
@@ -116,7 +156,8 @@
         0.4,
         0.43
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "leather"
     },
     "mat_loafer_brown": {
       "color": [
@@ -124,7 +165,8 @@
         0.2,
         0.1
       ],
-      "roughness": 0.45
+      "roughness": 0.45,
+      "detail": "leather"
     },
     "mat_bag_black": {
       "color": [
@@ -132,7 +174,8 @@
         0.07,
         0.08
       ],
-      "roughness": 0.6
+      "roughness": 0.6,
+      "detail": "nylon"
     },
     "mat_keyring_yellow": {
       "color": [
@@ -141,7 +184,8 @@
         0.1
       ],
       "roughness": 0.4,
-      "metallic": 0.3
+      "metallic": 0.3,
+      "detail": "smooth"
     },
     "mat_watch_black": {
       "color": [
@@ -149,7 +193,8 @@
         0.06,
         0.07
       ],
-      "roughness": 0.4
+      "roughness": 0.4,
+      "detail": "smooth"
     },
     "mat_sock_white": {
       "color": [
@@ -157,7 +202,8 @@
         0.9,
         0.89
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "cotton"
     },
     "mat_sock_dark": {
       "color": [
@@ -165,7 +211,8 @@
         0.1,
         0.12
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "cotton"
     },
     "mat_cap_cream": {
       "color": [
@@ -173,7 +220,8 @@
         0.87,
         0.8
       ],
-      "roughness": 0.85
+      "roughness": 0.85,
+      "detail": "cotton"
     },
     "mat_earbud_white": {
       "color": [
@@ -181,7 +229,8 @@
         0.96,
         0.96
       ],
-      "roughness": 0.3
+      "roughness": 0.3,
+      "detail": "smooth"
     },
     "mat_earring_gold": {
       "color": [
@@ -190,7 +239,8 @@
         0.22
       ],
       "roughness": 0.25,
-      "metallic": 0.9
+      "metallic": 0.9,
+      "detail": "smooth"
     },
     "mat_hair_black": {
       "color": [
@@ -198,7 +248,8 @@
         0.06,
         0.06
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "hair"
     },
     "mat_hair_black_gloss": {
       "color": [
@@ -207,7 +258,8 @@
         0.06
       ],
       "roughness": 0.25,
-      "specular": 0.9
+      "specular": 0.9,
+      "detail": "hair"
     },
     "mat_coat_beige": {
       "color": [
@@ -215,7 +267,8 @@
         0.66,
         0.5
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "wool"
     },
     "mat_belt_brown": {
       "color": [
@@ -223,7 +276,8 @@
         0.12,
         0.06
       ],
-      "roughness": 0.6
+      "roughness": 0.6,
+      "detail": "leather"
     },
     "mat_button_brown": {
       "color": [
@@ -231,7 +285,8 @@
         0.12,
         0.07
       ],
-      "roughness": 0.5
+      "roughness": 0.5,
+      "detail": "smooth"
     },
     "mat_button_gold": {
       "color": [
@@ -240,7 +295,8 @@
         0.32
       ],
       "roughness": 0.3,
-      "metallic": 0.8
+      "metallic": 0.8,
+      "detail": "smooth"
     },
     "mat_glasses_black": {
       "color": [
@@ -248,7 +304,8 @@
         0.05,
         0.05
       ],
-      "roughness": 0.4
+      "roughness": 0.4,
+      "detail": "smooth"
     },
     "mat_slacks_black": {
       "color": [
@@ -256,7 +313,8 @@
         0.08,
         0.09
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "suiting"
     },
     "mat_shoe_black": {
       "color": [
@@ -264,7 +322,8 @@
         0.05,
         0.05
       ],
-      "roughness": 0.35
+      "roughness": 0.35,
+      "detail": "leather"
     },
     "mat_boot_elastic": {
       "color": [
@@ -272,7 +331,8 @@
         0.24,
         0.24
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "cotton"
     },
     "mat_tote_brown": {
       "color": [
@@ -280,7 +340,8 @@
         0.28,
         0.13
       ],
-      "roughness": 0.6
+      "roughness": 0.6,
+      "detail": "leather"
     },
     "mat_scarf_burgundy": {
       "color": [
@@ -288,7 +349,8 @@
         0.09,
         0.13
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "knit"
     },
     "mat_scarf_stripe": {
       "color": [
@@ -296,7 +358,8 @@
         0.88,
         0.78
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "knit"
     },
     "mat_beanie_rust": {
       "color": [
@@ -304,7 +367,8 @@
         0.24,
         0.12
       ],
-      "roughness": 0.95
+      "roughness": 0.95,
+      "detail": "knit"
     },
     "mat_hair_chestnut": {
       "color": [
@@ -312,7 +376,8 @@
         0.22,
         0.12
       ],
-      "roughness": 0.85
+      "roughness": 0.85,
+      "detail": "hair"
     },
     "mat_inner_white": {
       "color": [
@@ -320,7 +385,8 @@
         0.93,
         0.91
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "cotton"
     },
     "mat_vest_green": {
       "color": [
@@ -328,7 +394,8 @@
         0.27,
         0.19
       ],
-      "roughness": 0.45
+      "roughness": 0.45,
+      "detail": "nylon"
     },
     "mat_zip_dark": {
       "color": [
@@ -336,7 +403,8 @@
         0.05,
         0.05
       ],
-      "roughness": 0.5
+      "roughness": 0.5,
+      "detail": "smooth"
     },
     "mat_patch_light": {
       "color": [
@@ -344,7 +412,8 @@
         0.85,
         0.83
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "cotton"
     },
     "mat_cargo": {
       "color": [
@@ -352,7 +421,8 @@
         0.5,
         0.38
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "twill"
     },
     "mat_hightop_charcoal": {
       "color": [
@@ -360,7 +430,8 @@
         0.2,
         0.22
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "cotton"
     },
     "mat_lace_dark": {
       "color": [
@@ -368,7 +439,8 @@
         0.13,
         0.13
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_sole_white": {
       "color": [
@@ -376,7 +448,8 @@
         0.9,
         0.88
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "smooth"
     },
     "mat_backpack_gray": {
       "color": [
@@ -384,7 +457,8 @@
         0.32,
         0.35
       ],
-      "roughness": 0.7
+      "roughness": 0.7,
+      "detail": "nylon"
     },
     "mat_earbud_black": {
       "color": [
@@ -392,7 +466,8 @@
         0.04,
         0.04
       ],
-      "roughness": 0.35
+      "roughness": 0.35,
+      "detail": "smooth"
     },
     "mat_suit_navy": {
       "color": [
@@ -400,7 +475,8 @@
         0.12,
         0.22
       ],
-      "roughness": 0.75
+      "roughness": 0.75,
+      "detail": "suiting"
     },
     "mat_shirt_white": {
       "color": [
@@ -408,7 +484,8 @@
         0.95,
         0.95
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_tie_burgundy": {
       "color": [
@@ -416,7 +493,8 @@
         0.08,
         0.12
       ],
-      "roughness": 0.5
+      "roughness": 0.5,
+      "detail": "suiting"
     },
     "mat_tie_stripe": {
       "color": [
@@ -424,7 +502,8 @@
         0.82,
         0.66
       ],
-      "roughness": 0.5
+      "roughness": 0.5,
+      "detail": "suiting"
     },
     "mat_oxford_black": {
       "color": [
@@ -432,7 +511,8 @@
         0.04,
         0.04
       ],
-      "roughness": 0.3
+      "roughness": 0.3,
+      "detail": "leather"
     },
     "mat_oxford_tan": {
       "color": [
@@ -440,7 +520,8 @@
         0.36,
         0.18
       ],
-      "roughness": 0.35
+      "roughness": 0.35,
+      "detail": "leather"
     },
     "mat_briefcase": {
       "color": [
@@ -448,7 +529,8 @@
         0.08,
         0.06
       ],
-      "roughness": 0.5
+      "roughness": 0.5,
+      "detail": "leather"
     },
     "mat_pin_gold": {
       "color": [
@@ -457,7 +539,8 @@
         0.25
       ],
       "roughness": 0.25,
-      "metallic": 0.9
+      "metallic": 0.9,
+      "detail": "smooth"
     },
     "mat_hair_dark": {
       "color": [
@@ -465,7 +548,8 @@
         0.1,
         0.08
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "hair"
     },
     "mat_hair_dark_gloss": {
       "color": [
@@ -474,7 +558,8 @@
         0.08
       ],
       "roughness": 0.25,
-      "specular": 0.9
+      "specular": 0.9,
+      "detail": "hair"
     },
     "mat_pocket_white": {
       "color": [
@@ -482,7 +567,8 @@
         0.96,
         0.96
       ],
-      "roughness": 0.8
+      "roughness": 0.8,
+      "detail": "cotton"
     },
     "mat_pocket_gray": {
       "color": [
@@ -490,7 +576,8 @@
         0.4,
         0.42
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "cotton"
     },
     "mat_cargo_pocket": {
       "color": [
@@ -498,7 +585,8 @@
         0.36,
         0.26
       ],
-      "roughness": 0.9
+      "roughness": 0.9,
+      "detail": "twill"
     }
   }
 }

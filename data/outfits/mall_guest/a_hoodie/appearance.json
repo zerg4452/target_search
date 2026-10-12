@@ -50,7 +50,10 @@
     "face": {
       "node": "FaceNeutral",
       "materials": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ]
     },
     "hat": {

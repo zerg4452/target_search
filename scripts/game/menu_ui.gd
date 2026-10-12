@@ -34,7 +34,7 @@ func setup(p_store: DataStore, p_records: Records, p_settings: AppSettings) -> v
 	store = p_store
 	records = p_records
 	settings = p_settings
-	mats = MaterialCache.new(store.outfits["mall_guest"]["palette"])
+	mats = MaterialCache.for_store(store, store.outfits["mall_guest"]["palette"])
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	var bg: ColorRect = ColorRect.new()
 	bg.color = Color(0.12, 0.12, 0.14)
@@ -81,7 +81,7 @@ func setup(p_store: DataStore, p_records: Records, p_settings: AppSettings) -> v
 	_build_records()
 	_build_codex()
 	_settings_panel = SettingsPanel.new()
-	_settings_panel.setup(settings)
+	_settings_panel.setup(settings, store.graphics)
 	_settings_panel.visible = false
 	_settings_panel.closed.connect(_hide_panels)
 	_settings_panel.changed.connect(func() -> void: settings_changed.emit())

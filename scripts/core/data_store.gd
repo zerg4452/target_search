@@ -22,6 +22,9 @@ var maps: Dictionary = {}       ## map_id -> Dictionary
 var outfits: Dictionary = {}    ## outfit_id -> Dictionary (outfit.json)
 var types: Dictionary = {}      ## outfit_id -> { type_id -> { "appearance": Dictionary, "variants": Array } }
 var manifests: Dictionary = {}  ## outfit_id -> { type_id -> manifest(노드·표면·잔해 목록) }
+var material_details: Dictionary = {}  ## data/material_details.json (D-33)
+var texture_stats: Dictionary = {}     ## assets/textures/textures.manifest.json (생성기가 쓴 명도 평균)
+var graphics: Dictionary = {}          ## data/graphics_quality.json (D-33)
 var load_errors: PackedStringArray = []
 
 
@@ -38,6 +41,9 @@ func load_from(root: String) -> void:
 	player = _read(root + "/player_tuning.json")
 	visibility = _read(root + "/visibility_tuning.json")
 	scoring = _read(root + "/scoring.json")
+	material_details = _read(root + "/material_details.json")
+	graphics = _read(root + "/graphics_quality.json")
+	texture_stats = _read("res://assets/textures/textures.manifest.json")
 	for f: String in DirAccess.get_files_at(root + "/maps"):
 		if f.ends_with(".json"):
 			var m: Dictionary = _read("%s/maps/%s" % [root, f])
@@ -68,6 +74,14 @@ func _read(path: String) -> Dictionary:
 		load_errors.append("JSON 파싱 실패: %s" % path)
 		return {}
 	return parsed
+
+
+## 그래픽 품질 단계. id가 비었거나 없으면 기본 단계.
+func graphics_level(id: String) -> Dictionary:
+	var levels: Dictionary = graphics.get("levels", {})
+	if levels.has(id):
+		return levels[id]
+	return levels.get(String(graphics.get("default", "high")), {})
 
 
 func preset(preset_id: String) -> Dictionary:
@@ -138,6 +152,17 @@ func validate() -> PackedStringArray:
 		_validate_map(maps[map_id], errs)
 	for outfit_id: String in types:
 		_validate_outfit(outfit_id, errs)
+	var glv: Dictionary = graphics.get("levels", {})
+	if not glv.has(String(graphics.get("default", ""))):
+		errs.append("graphics_quality: 기본 단계가 levels에 없음")
+	for gid: Variant in graphics.get("order", []):
+		if not glv.has(String(gid)):
+			errs.append("graphics_quality: order의 %s가 levels에 없음" % gid)
+	var ppal: Dictionary = player.get("palette", {})
+	if ppal.is_empty():
+		errs.append("player: palette 없음")
+	for pid: String in ppal:
+		_check_detail("player 팔레트 " + pid, String((ppal[pid] as Dictionary).get("detail", "")), errs)
 	return errs
 
 
@@ -203,6 +228,9 @@ func _validate_map(m: Dictionary, errs: PackedStringArray) -> void:
 			errs.append("map %s: %s 난이도는 타입 %d개가 필요하지만 맵에는 %d개" % [mid, p2["id"], int(p2["types_per_match"]), map_types.size()])
 	if not m.has("layout"):
 		errs.append("map %s: layout 없음" % mid)
+	var art_mats: Dictionary = m.get("art", {}).get("materials", {})
+	for am: String in art_mats:
+		_check_detail("map %s 재질 %s" % [mid, am], String(art_mats[am]), errs)
 
 
 func _validate_outfit(outfit_id: String, errs: PackedStringArray) -> void:
@@ -212,6 +240,8 @@ func _validate_outfit(outfit_id: String, errs: PackedStringArray) -> void:
 		var pd: Variant = palette[mid]
 		if typeof(pd) != TYPE_DICTIONARY or not (pd as Dictionary).has("color"):
 			errs.append("%s: 팔레트 %s 형식 오류" % [outfit_id, mid])
+		else:
+			_check_detail("%s 팔레트 %s" % [outfit_id, mid], String((pd as Dictionary).get("detail", "")), errs)
 	var seen_ids: Dictionary = {}
 	var by_type: Dictionary = types[outfit_id]
 	for type_id: String in by_type:
@@ -236,6 +266,17 @@ func _validate_outfit(outfit_id: String, errs: PackedStringArray) -> void:
 
 
 ## 노드가 목록에 있고 표면 수와 머티리얼 수가 같으며 머티리얼이 팔레트에 있는지.
+## 재질 세부 텍스처 이름이 정의돼 있고 생성기 목록에 있는지(D-33).
+func _check_detail(tag: String, detail: String, errs: PackedStringArray) -> void:
+	if detail == "":
+		errs.append("%s: detail 없음" % tag)
+		return
+	if not (material_details.get("details", {}) as Dictionary).has(detail):
+		errs.append("%s: 정의되지 않은 세부 텍스처 %s" % [tag, detail])
+	if not (texture_stats.get("textures", {}) as Dictionary).has(detail):
+		errs.append("%s: 세부 텍스처 %s가 생성기 목록(textures.manifest.json)에 없음" % [tag, detail])
+
+
 func _check_node_mats(tag: String, node: String, mats: Array, nodes: Dictionary, palette: Dictionary, errs: PackedStringArray) -> void:
 	if node == "NONE":
 		if not mats.is_empty():

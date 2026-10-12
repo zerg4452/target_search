@@ -3,7 +3,7 @@ extends TestCase
 ## glb는 헤드리스에서도 읽힌다(tools/run_tests.ps1이 먼저 --import를 돌린다).
 
 const ANIMS: Array[String] = ["walk", "idle", "look_around", "call_react", "wrong_accused", "land", "reveal"]
-const TRI_BUDGET: int = 8000
+const TRI_BUDGET: int = 35000   ## §12.2 (D-33에서 8,000 → 12,000, D-35에서 35,000)
 
 
 func test_glb_matches_manifest() -> bool:

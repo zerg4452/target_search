@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 1492,
+      "tris": 10080,
       "bones": [
         "head",
         "neck",
@@ -58,7 +58,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 542,
+      "tris": 3899,
       "bones": [
         "head"
       ]
@@ -68,7 +68,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 542,
+      "tris": 3899,
       "bones": [
         "head"
       ]
@@ -78,43 +78,55 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 1274,
+      "tris": 5269,
       "bones": [
         "head"
       ]
     },
     "FaceNeutral": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceSmile": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 384,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceFrown": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 236,
+      "tris": 2692,
       "bones": [
         "head"
       ]
     },
     "FaceNeutralMole": {
       "surfaces": [
-        "mat_feature"
+        "mat_feature",
+        "mat_eye_white",
+        "mat_iris",
+        "mat_lip"
       ],
-      "tris": 316,
+      "tris": 2812,
       "bones": [
         "head"
       ]
@@ -123,7 +135,7 @@
       "surfaces": [
         "mat_hoodie_gray"
       ],
-      "tris": 1308,
+      "tris": 4910,
       "bones": [
         "hips",
         "spine",
@@ -138,7 +150,7 @@
       "surfaces": [
         "mat_hoodie_gray"
       ],
-      "tris": 1600,
+      "tris": 5046,
       "bones": [
         "hips",
         "spine",
@@ -153,9 +165,10 @@
       "surfaces": [
         "mat_pocket_gray"
       ],
-      "tris": 252,
+      "tris": 400,
       "bones": [
-        "spine"
+        "spine",
+        "hips"
       ]
     },
     "LogoCircle": {
@@ -163,7 +176,7 @@
         "mat_print_dark",
         "mat_print_light"
       ],
-      "tris": 1116,
+      "tris": 1516,
       "bones": [
         "chest"
       ]
@@ -200,7 +213,7 @@
       "surfaces": [
         "mat_string_white"
       ],
-      "tris": 112,
+      "tris": 468,
       "bones": [
         "chest"
       ]
@@ -209,7 +222,7 @@
       "surfaces": [
         "mat_string_white"
       ],
-      "tris": 56,
+      "tris": 234,
       "bones": [
         "chest"
       ]
@@ -218,7 +231,7 @@
       "surfaces": [
         "mat_denim"
       ],
-      "tris": 1044,
+      "tris": 4069,
       "bones": [
         "hips",
         "thigh_L",
@@ -231,7 +244,7 @@
       "surfaces": [
         "mat_denim"
       ],
-      "tris": 1132,
+      "tris": 3997,
       "bones": [
         "hips",
         "thigh_L",
@@ -262,7 +275,7 @@
       "surfaces": [
         "mat_sock_white"
       ],
-      "tris": 88,
+      "tris": 332,
       "bones": [
         "shin_L",
         "shin_R"
@@ -274,7 +287,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 700,
+      "tris": 2454,
       "bones": [
         "foot_L",
         "foot_R"
@@ -286,7 +299,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 700,
+      "tris": 2454,
       "bones": [
         "foot_L",
         "foot_R"
@@ -296,7 +309,7 @@
       "surfaces": [
         "mat_loafer_brown"
       ],
-      "tris": 636,
+      "tris": 1926,
       "bones": [
         "foot_L",
         "foot_R"
@@ -367,7 +380,7 @@
       "surfaces": [
         "mat_cap_cream"
       ],
-      "tris": 336,
+      "tris": 463,
       "bones": [
         "head"
       ]
@@ -376,7 +389,7 @@
       "surfaces": [
         "mat_earbud_white"
       ],
-      "tris": 128,
+      "tris": 184,
       "bones": [
         "head"
       ]
@@ -411,7 +424,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 350
+      "tris": 1227
     }
   }
 }

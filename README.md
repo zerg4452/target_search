@@ -22,6 +22,7 @@ Godot 4.7.2 Standard가 필요하다. 기본 경로는 WinGet 설치 위치이�
 | NPC 4타입 + 플레이어 | `blender --background --factory-startup --python tools/blender/build_npc_type.py -- --all` |
 | 아레나 | `blender --background --factory-startup --python tools/blender/build_arena_atrium.py` |
 | 소리 | `py -3 tools/generate_audio.py` |
+| 재질 세부 텍스처·광고판 그림 | `py -3 tools/generate_textures.py` → `godot --headless --path . --import` |
 | 변이 등급 다시 매기기 | `godot --path . --script res://tests/visual/run_visual_checks.gd -- --calibrate` → `py -3 tools/apply_calibration.py` |
 | 설계서 자동 구역(§6.5 카탈로그, 부록 B) | `py -3 tools/sync_design_doc.py` |
 

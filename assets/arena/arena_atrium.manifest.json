@@ -4,22 +4,46 @@
   "map": "atrium",
   "nodes": {
     "Floor": {
-      "tris": 800
+      "tris": 808
     },
     "Walls": {
-      "tris": 204
+      "tris": 672
     },
     "Shutters": {
-      "tris": 1740
+      "tris": 948
     },
     "ShopSigns": {
-      "tris": 288
+      "tris": 4076
+    },
+    "ShopInteriors": {
+      "tris": 46392
+    },
+    "ShopGlass": {
+      "tris": 216
+    },
+    "ShopFrames": {
+      "tris": 1080
     },
     "Gallery": {
       "tris": 2048
     },
+    "GalleryGlass": {
+      "tris": 48
+    },
+    "GalleryDecor": {
+      "tris": 18312
+    },
+    "SkylightGlass": {
+      "tris": 12
+    },
     "Skylight": {
-      "tris": 192
+      "tris": 228
+    },
+    "CeilingBeams": {
+      "tris": 996
+    },
+    "Lamps": {
+      "tris": 2080
     },
     "OCC_P1": {
       "tris": 92
@@ -78,6 +102,9 @@
     "OCC_ESC": {
       "tris": 12
     },
+    "FountainWater": {
+      "tris": 480
+    },
     "OCC_S1": {
       "tris": 12
     },
@@ -103,10 +130,13 @@
       "tris": 12
     },
     "Decor": {
-      "tris": 9468
+      "tris": 19452
     },
     "EmergencyStrips": {
       "tris": 84
+    },
+    "Screens": {
+      "tris": 56
     }
   }
 }

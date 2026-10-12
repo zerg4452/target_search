@@ -21,6 +21,7 @@ const DEFAULTS: Dictionary = {
 	"sound_direction": false,
 	"reduce_flashing": false,
 	"ui_scale": 1.0,
+	"graphics_quality": "",   ## data/graphics_quality.json의 단계 id. 비면 기본 단계
 }
 const FOV_RANGE: Vector2 = Vector2(55.0, 80.0)
 const UI_SCALES: Array[float] = [0.85, 1.0, 1.2, 1.4]

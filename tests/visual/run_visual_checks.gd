@@ -43,7 +43,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	store = DataStore.load_default()
-	mats = MaterialCache.new(store.outfits["mall_guest"]["palette"])
+	mats = MaterialCache.for_store(store, store.outfits["mall_guest"]["palette"])
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT_DIR))
 	vp = SubViewport.new()
 	vp.size = Vector2i(W, H)
@@ -306,7 +306,7 @@ func _v03() -> void:
 	var layout: ArenaLayout = ArenaLayout.from_map(store.maps["atrium"], store.npc["spawn"])
 	var arena: ArenaVisual = ArenaVisual.new()
 	stage.add_child(arena)
-	arena.build(layout, store.maps["atrium"])
+	arena.build(layout, store.maps["atrium"], store)
 	var cands: Array = layout.spawn_candidates
 	var points: Array[Vector2] = []
 	var step: int = maxi(1, cands.size() / 12)
@@ -315,6 +315,16 @@ func _v03() -> void:
 			points.append(cands[i])
 	var base: Dictionary = Appearance.base_from(store.type_data("mall_guest", "a_hoodie")["appearance"]["slots"])
 	var scene: String = store.type_scene("mall_guest", "a_hoodie")
+	## 그래픽 품질 단계마다 따로 잰다(D-33: 단계는 조명 효과만 바꾸므로 모든 단계가 하한을 넘어야 한다).
+	for qid: Variant in store.graphics.get("order", [""]):
+		arena.apply_quality(store.graphics_level(String(qid)))
+		for _i: int in 20:   ## 반사 프로브 다시 찍기·그림자 지도 크기 변경이 끝날 때까지
+			await process_frame
+		await _v03_phases(arena, layout, points, base, scene, String(qid))
+	model = null
+
+
+func _v03_phases(arena: ArenaVisual, layout: ArenaLayout, points: Array[Vector2], base: Dictionary, scene: String, qid: String) -> void:
 	for phase: String in ["SEARCH", "HUNT"]:
 		arena.set_hunt_lighting(phase == "HUNT")
 		var floor_v: float = 0.35 if phase == "SEARCH" else 0.30
@@ -347,12 +357,11 @@ func _v03() -> void:
 			var mean: float = sum / maxf(n, 1)
 			values.append(mean)
 			var ok: bool = mean >= floor_v
-			report.append({"check": "V-03", "id": "%s@(%.1f,%.1f)" % [phase, p.x, p.y], "phase": phase, "mean": mean, "floor": floor_v, "pass": ok})
-			print("V-03 %s %s (%.1f, %.1f) 얼굴 평균 밝기 %.3f (하한 %.2f)" % ["PASS" if ok else "FAIL", phase, p.x, p.y, mean, floor_v])
+			report.append({"check": "V-03", "id": "%s/%s@(%.1f,%.1f)" % [qid, phase, p.x, p.y], "quality": qid, "phase": phase, "mean": mean, "floor": floor_v, "pass": ok})
+			print("V-03 %s %s %s (%.1f, %.1f) 얼굴 평균 밝기 %.3f (하한 %.2f)" % ["PASS" if ok else "FAIL", qid, phase, p.x, p.y, mean, floor_v])
 			if not ok:
 				failures += 1
-				img.save_png(ProjectSettings.globalize_path(OUT_DIR.path_join("V03_%s_%d.png" % [phase, values.size()])))
-	model = null
+				img.save_png(ProjectSettings.globalize_path(OUT_DIR.path_join("V03_%s_%s_%d.png" % [qid, phase, values.size()])))
 
 
 # ---------------------------------------------------------------- 보고서
