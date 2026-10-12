@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 10080,
+      "tris": 10464,
       "bones": [
         "head",
         "neck",
@@ -96,7 +96,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -108,7 +108,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -120,7 +120,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2812,
+      "tris": 3868,
       "bones": [
         "head"
       ]
@@ -129,7 +129,7 @@
       "surfaces": [
         "mat_inner_white"
       ],
-      "tris": 3852,
+      "tris": 4052,
       "bones": [
         "hips",
         "spine",
@@ -160,7 +160,7 @@
         "mat_vest_green",
         "mat_zip_dark"
       ],
-      "tris": 1622,
+      "tris": 4130,
       "bones": [
         "hips",
         "spine",
@@ -173,7 +173,7 @@
         "mat_vest_green",
         "mat_zip_dark"
       ],
-      "tris": 1706,
+      "tris": 5582,
       "bones": [
         "hips",
         "spine",
@@ -233,7 +233,7 @@
         "mat_lace_dark",
         "mat_sole_white"
       ],
-      "tris": 2682,
+      "tris": 4610,
       "bones": [
         "foot_L",
         "foot_R"
@@ -245,7 +245,7 @@
         "mat_lace_dark",
         "mat_sole_white"
       ],
-      "tris": 2406,
+      "tris": 4334,
       "bones": [
         "foot_L",
         "foot_R"

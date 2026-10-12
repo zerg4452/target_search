@@ -67,7 +67,8 @@
     "top": {
       "node": "Hoodie",
       "materials": [
-        "mat_hoodie_gray"
+        "mat_hoodie_gray",
+        "mat_stripe_gray"
       ]
     },
     "top_pocket": {
@@ -98,7 +99,9 @@
     "pants": {
       "node": "JeansStraight",
       "materials": [
-        "mat_denim"
+        "mat_denim",
+        "mat_stitch_gold",
+        "mat_button_gold"
       ]
     },
     "pants_tab": {
@@ -131,7 +134,8 @@
     "watch": {
       "node": "WatchLeft",
       "materials": [
-        "mat_watch_black"
+        "mat_watch_black",
+        "mat_print_light"
       ]
     }
   }

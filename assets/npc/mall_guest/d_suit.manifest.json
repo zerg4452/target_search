@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 10080,
+      "tris": 10464,
       "bones": [
         "head",
         "neck",
@@ -58,7 +58,7 @@
         "mat_hair_dark",
         "mat_skin"
       ],
-      "tris": 3483,
+      "tris": 4101,
       "bones": [
         "head"
       ]
@@ -70,7 +70,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -82,7 +82,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -94,7 +94,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -106,7 +106,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2812,
+      "tris": 3868,
       "bones": [
         "head"
       ]
@@ -147,9 +147,10 @@
       "surfaces": [
         "mat_shirt_white"
       ],
-      "tris": 344,
+      "tris": 416,
       "bones": [
         "neck",
+        "chest",
         "forearm_L",
         "forearm_R"
       ]
@@ -228,9 +229,10 @@
     },
     "Oxfords": {
       "surfaces": [
-        "mat_oxford_black"
+        "mat_oxford_black",
+        "mat_lace_black"
       ],
-      "tris": 1926,
+      "tris": 3086,
       "bones": [
         "foot_L",
         "foot_R"
@@ -240,7 +242,7 @@
       "surfaces": [
         "mat_briefcase"
       ],
-      "tris": 276,
+      "tris": 504,
       "bones": [
         "hand_L"
       ]
@@ -249,7 +251,7 @@
       "surfaces": [
         "mat_briefcase"
       ],
-      "tris": 276,
+      "tris": 504,
       "bones": [
         "hand_R"
       ]

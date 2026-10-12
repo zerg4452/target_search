@@ -109,6 +109,64 @@ def belt_loops(part, prof, z, surface=0):
         part.box(q, (0.011, 0.005, 0.04), "hips", surface, rot=rot)
 
 
+def ring_ribs(part, center_fn, radius_fn, z0, z1, count, bone_fn, surface=0, w=0.0042, d=0.0028):
+    """골지(리브): 원통 둘레에 세로 골을 count개 세운다. center_fn(z)=축 위의 점, radius_fn(z)=반지름."""
+    if not HQ_FACE:
+        return
+    zc = (z0 + z1) / 2
+    c = center_fn(zc)
+    r = radius_fn(zc)
+    for k in range(count):
+        a = 2 * math.pi * k / count
+        n = Vector((math.sin(a), math.cos(a), 0.0))
+        q = c + n * (r + d * 0.3)
+        part.box(q, (w, d, z1 - z0), bone_fn(zc), surface, rot=rz(-math.degrees(a)))
+
+
+def dashed(part, pts, outward, bone_of, surface, width=0.0026, thick=0.0012, dash=0.008, gap=0.005):
+    """점선 스티치: pts 경로를 따라 짧은 띠를 띄엄띄엄 놓는다."""
+    if not HQ_FACE:
+        return
+    path = [Vector(q) for q in pts]
+    seg_len = [(b - a).length for a, b in zip(path, path[1:])]
+    total = sum(seg_len)
+    t = 0.0
+
+    def at(dist):
+        for (a, b), L in zip(zip(path, path[1:]), seg_len):
+            if dist <= L or L == seg_len[-1] and dist <= L + 1e-6:
+                return a.lerp(b, dist / max(L, 1e-9))
+            dist -= L
+        return path[-1]
+    while t + dash <= total:
+        a = at(t)
+        b = at(t + dash)
+        part.ribbon([a, b], width, thick, outward, bone_of, surface)
+        t += dash + gap
+
+
+def surf_stitch(part, prof, path, surface, lift=0.0016, offset_deg=0.0):
+    """몸통 표면 위 점선 스티치(path = [(각°, z), ...])."""
+    if not HQ_FACE:
+        return
+    pts = [prof.point(a + offset_deg, z, lift) for a, z in _dense(path, 0.01)]
+    dashed(part, pts, prof.outward, lambda q: bone_by_height(q.z), surface)
+
+
+def leg_stitch(part, side, z_top, z_hem, radii, angle_deg, surface, lift=0.0045):
+    if not HQ_FACE:
+        return
+    sx = -1.0 if side == "L" else 1.0
+    a = math.radians(angle_deg)
+    d = Vector((sx * math.sin(a), math.cos(a), 0.0))
+    pts = []
+    z = z_top
+    while z > z_hem + 0.01:
+        pts.append(leg_point(side, z) + d * (leg_radius(z, *radii) + lift))
+        z -= 0.01
+    dashed(part, pts, lambda q: d, lambda q: f"thigh_{side}" if q.z > 0.5 else f"shin_{side}", surface)
+
+
 def transform_part(part, matrix):
     part.bm.verts.ensure_lookup_table()
     for v in part.bm.verts:
@@ -146,6 +204,9 @@ def ears(p):
         p.ellipsoid((sx * 0.0845, -0.004, 1.597), (0.0085, 0.0205, 0.031), "head", seg=(12, 10))
         p.ellipsoid((sx * 0.0905, -0.006, 1.600), (0.0035, 0.0175, 0.027), "head", seg=(10, 8))   # 귓바퀴 테
         p.ellipsoid((sx * 0.0855, -0.001, 1.574), (0.0072, 0.0095, 0.012), "head", seg=(10, 8))  # 귓불
+        ridge = [Vector((sx * 0.0905, -0.0 - 0.006 * math.sin(a), 1.598 + 0.017 * math.cos(a))) for a in [math.radians(v) for v in range(-60, 181, 30)]]
+        for a, b in zip(ridge, ridge[1:]):
+            p.tube(a, b, 0.0022, 0.0022, "head", seg=5, lengthwise=False)                         # 귀 연골 능선
 
 
 def eyelids(p):
@@ -234,8 +295,20 @@ def brow(p, sx, frown):
         x = sx * (0.013 + 0.033 * t)
         z = 1.642 + 0.0045 * math.sin(math.pi * (0.25 + 0.75 * t)) - (0.0065 * (1.0 - t) if frown else 0.0)
         pts.append(Vector((x, head_surface_y(x, z) + 0.0012, z)))
+    if HQ_FACE:
+        # 털 결: 눈썹 띠를 따라 비스듬히 누운 짧은 털 다발(안쪽은 위로, 바깥쪽은 옆으로 눕는다)
+        for i in range(14):
+            t = i / 13
+            x = sx * (0.012 + 0.035 * t)
+            z = 1.6395 + 0.0045 * math.sin(math.pi * (0.25 + 0.75 * t)) - (0.0065 * (1.0 - t) if frown else 0.0)
+            ang = math.radians(28.0 - 22.0 * t) if not frown else math.radians(14.0 - 12.0 * t)
+            dx = sx * math.cos(ang) * 0.0045
+            dz = math.sin(ang) * 0.0045
+            a = Vector((x, head_surface_y(x, z) + 0.0011, z))
+            b = Vector((x + dx, head_surface_y(x + dx, z + dz) + 0.0011, z + dz))
+            p.tube(a, b, 0.0011 - 0.0004 * t, 0.0005, "head", 0, seg=4, squash=0.5, lengthwise=False)
     for i, (a, b) in enumerate(zip(pts, pts[1:])):
-        r0 = 0.0034 - 0.0018 * i / 6
+        r0 = (0.0034 - 0.0018 * i / 6) * (0.88 if HQ_FACE else 1.0)
         p.tube(a, b, r0, r0 - 0.0003, "head", 0, seg=5, squash=0.45, lengthwise=False)
 
 
@@ -269,6 +342,15 @@ def face(name, mouth_kind="neutral", brows="flat", mole=False):
         p.ellipsoid(c, (0.0128, 0.0088, 0.0084), "head", 1, seg=(12, 9))                       # 흰자
         p.ellipsoid(c + Vector((0, 0.0074, -0.0004)), (0.0062, 0.0018, 0.0062), "head", 2, seg=(12, 5))   # 홍채
         p.ellipsoid(c + Vector((0, 0.0090, -0.0004)), (0.0028, 0.0007, 0.0028), "head", 0, seg=(8, 4))   # 동공
+        p.torus(c + Vector((0, 0.0081, -0.0004)), 0.0059, 0.0006, "head", 0, seg=(16, 4), rot=rx(90))     # 홍채 테두리
+        lo = []
+        for i in range(7):
+            t = -1.0 + 2.0 * i / 6
+            xx = x + sx * 0.0115 * t
+            zz = EYE_Z - 0.0052 - 0.0018 * (1.0 - t * t)
+            lo.append(Vector((xx, head_surface_y(xx, zz) + 0.0018 * (1.0 - t * t) ** 0.5, zz)))
+        for a, b in zip(lo, lo[1:]):
+            p.tube(a, b, 0.0006, 0.0006, "head", 0, seg=4, lengthwise=False)                         # 아래 속눈썹 선
         # 윗속눈썹 선: 눈꺼풀 가장자리를 따라가는 짙은 선
         pts = []
         for i in range(9):
@@ -387,6 +469,16 @@ def side_part_locks(part, c, r, part_x, hairline, surface=0):
         az = math.degrees(math.asin(arg))
         hair_lock(part, c, r, [(az, el), (az - to * 22.0, el - 10.0), (az - to * 46.0, max(20.0, el - 26.0))],
                   0.017 + 0.004 * (k % 2), hairline, surface, thick=0.0038)
+    if HQ_FACE:
+        # 잔 다발: 큰 다발 사이를 메우는 가는 다발 한 겹
+        for k in range(16):
+            el = 33.5 + 2.9 * k
+            arg = (part_x - to * 0.009) / (r.x * math.cos(math.radians(el)))
+            if abs(arg) >= 0.98:
+                continue
+            az = math.degrees(math.asin(arg))
+            hair_lock(part, c, r, [(az, el), (az + to * 36.0, el - 4.0), (az + to * 76.0, max(14.0, el - 24.0))],
+                      0.011, hairline, surface, thick=0.0026, lift=(0.0042, 0.0075, 0.0028), steps=9)
     for k in range(13):
         az = 106.0 + 12.0 * k
         hair_lock(part, c, r, [(az + to * 4.0, 74.0), (az, 50.0), (az - to * 3.0, 18.0)], 0.022, hairline, surface,
@@ -476,6 +568,18 @@ def sneaker(part, side, mats=(0, 1, 2), thick=0.0, laces=True, stripes=True, hig
     if HQ_FACE:
         part.ellipsoid((x, -0.055, sole_h + 0.03), (0.05, 0.03, 0.038), bone, s_body, seg=(12, 8))      # 뒤꿈치 보강
         part.box((x, 0.03, zc + 0.05), (0.036, 0.05, 0.01), bone, s_body, rot=rx(-28), bevel=0.003)     # 혀
+        part.box((x, -0.083, collar_top - 0.012), (0.014, 0.006, 0.03), bone, s_body, bevel=0.002)       # 뒤꿈치 고리
+        if laces:
+            for i in range(4):
+                y = 0.035 + i * 0.025
+                z = zc + 0.046 * math.sqrt(max(0.0, 1.0 - ((y - 0.055) / 0.128) ** 2)) + 0.002
+                for s2 in (-1.0, 1.0):
+                    part.torus((x + s2 * 0.021, y, z), 0.0042, 0.0012, bone, s_stripe, seg=(10, 4))       # 끈 구멍 링
+        sole = sole_surface if sole_surface is not None else s_body
+        for k in range(18):
+            a = 2 * math.pi * k / 18
+            q = Vector((x + 0.0535 * math.sin(a), 0.058 + 0.1375 * math.cos(a), sole_h * 0.4))
+            part.box(q, (0.004, 0.004, sole_h * 0.45), bone, sole, rot=rz(-math.degrees(a)))           # 밑창 옆 홈 무늬
         if laces:
             ky = 0.035 + 3 * 0.025
             kz = zc + 0.046 * math.sqrt(max(0.0, 1.0 - ((ky - 0.055) / 0.128) ** 2)) + 0.007
@@ -526,7 +630,7 @@ JEANS_P = Profile(JEANS_PELVIS)
 
 
 def hoodie(name, rolled_right=False):
-    p = Part(name, ["mat_hoodie_gray"])
+    p = Part(name, ["mat_hoodie_gray", "mat_stripe_gray"] if HQ_FACE else ["mat_hoodie_gray"])
     p.loft(HOODIE, bone_by_height, seg=22, cap_bottom=True)
     p.loft([(0.855, 0.183, 0.133, 0.0), (0.895, 0.181, 0.131, 0.0)], lambda z: "hips", seg=22, cap_top=False)
     p.ellipsoid((0.0, -0.10, 1.445), (0.12, 0.068, 0.075), "chest", seg=(14, 8))
@@ -541,6 +645,27 @@ def hoodie(name, rolled_right=False):
     for a in (-90.0, 90.0):
         surf_seam(p, HOODIE_P, [(a, 0.90), (a, 1.37)])
         surf_seam(p, HOODIE_P, [(a, 1.395), (a * 0.92, 1.44)], width=0.0038)
+    if HQ_FACE:
+        # 접혀 등에 걸친 후드: 목 뒤를 감는 두툼한 테두리와 후드 중심 솔기
+        rim = []
+        for k in range(15):
+            a = math.radians(-115.0 + 230.0 * k / 14)
+            rim.append(Vector((0.098 * math.sin(a), -0.012 + 0.092 * math.cos(a + math.pi), 1.462 - 0.012 * math.cos(a * 1.0))))
+        p.sweep(rim, [Vector((q.x, q.y + 0.012, 0.6)).normalized() for q in rim], [0.026] * len(rim), 0.013, "chest", 0, sides=10, tip=False)
+        p.ribbon([Vector((0, -0.165, 1.43)), Vector((0, -0.172, 1.395)), Vector((0, -0.165, 1.36))], 0.004, 0.003,
+                 lambda q: Vector((0, -1, 0.2)).normalized(), lambda q: "chest")
+        # 밑단·소맷부리 골지
+        ring_ribs(p, lambda z: Vector((0.0, 0.0, z)), lambda z: 0.183, 0.857, 0.893, 64, lambda z: "hips")
+        if not rolled_right:
+            for side in ("L", "R"):
+                ring_ribs(p, lambda z, s_=side: arm_point(s_, z), lambda z: 0.0525, 0.928, 0.952, 22, lambda z, s_=side: f"forearm_{s_}")
+        else:
+            ring_ribs(p, lambda z: arm_point("L", z), lambda z: 0.0525, 0.928, 0.952, 22, lambda z: "forearm_L")
+        # 끈 구멍 금속 링
+        for sx in (-1.0, 1.0):
+            x = sx * 0.036
+            q = Vector((x, HOODIE_P.front_y(x, 1.43) + 0.004, 1.43))
+            p.torus(q, 0.0062, 0.0016, "chest", 1, seg=(12, 4), rot=rx(70))
     return p
 
 
@@ -599,7 +724,7 @@ def hood_strings(name, both=True):
 
 
 def jeans(name, rolled=False):
-    p = Part(name, ["mat_denim"])
+    p = Part(name, ["mat_denim", "mat_stitch_gold", "mat_button_gold"] if HQ_FACE else ["mat_denim"])
     pelvis(p, JEANS_PELVIS)
     hem = 0.22 if rolled else 0.13
     trouser_legs(p, hem, 0.072, 0.063, 0.058)
@@ -618,6 +743,26 @@ def jeans(name, rolled=False):
     radii = (0.072, 0.063, 0.058)
     for side in ("L", "R"):
         leg_seam(p, side, 0.86, hem, (hem,) + radii, 90.0)
+    if HQ_FACE:
+        for side in ("L", "R"):
+            leg_stitch(p, side, 0.86, hem, (hem,) + radii, 84.0, 1)
+            leg_stitch(p, side, 0.86, hem, (hem,) + radii, 96.0, 1)
+        surf_stitch(p, JEANS_P, [(10.0, 0.905), (10.0, 0.835), (0.0, 0.812)], 1)                    # 앞 지퍼 J 스티치
+        for z in (0.917, 0.947):
+            surf_stitch(p, JEANS_P, [(-178.0, z), (-90.0, z), (0.0, z), (90.0, z), (178.0, z)], 1, lift=0.0075)  # 허리 밴드
+        for sx in (-1.0, 1.0):
+            surf_stitch(p, JEANS_P, [(sx * 66.0, 0.905), (sx * 48.0, 0.862), (sx * 40.0, 0.838)], 1, offset_deg=sx * 3.0)
+            # 뒷주머니 테두리와 갈매기 장식 스티치
+            a0, a1 = sx * 152.0, sx * 118.0
+            surf_stitch(p, JEANS_P, [(a0, 0.848), (a1, 0.848), (a1, 0.758), (sx * 135.0, 0.742), (a0, 0.758), (a0, 0.848)], 1, lift=0.0108)
+            surf_stitch(p, JEANS_P, [(a0 + sx * -3.0, 0.825), (sx * 135.0, 0.8), (a1 + sx * 3.0, 0.825)], 1, lift=0.0108)
+            # 앞주머니 모서리 리벳
+            for a in (sx * 66.0, sx * 38.0):
+                z = 0.905 if abs(a) > 50 else 0.838
+                q = JEANS_P.point(a, z, 0.003)
+                p.ellipsoid(q, (0.0035, 0.0035, 0.0035), "hips", 2, seg=(8, 5))
+        q = JEANS_P.point(0.0, 0.932, 0.009)
+        p.ellipsoid(q, (0.008, 0.004, 0.008), "hips", 2, seg=(12, 6))                                # 허리 단추
     return p
 
 
@@ -667,6 +812,13 @@ def sling_bag(name, ring=True, buckle="round"):
     n = prof.outward(c)
     phi = math.degrees(math.atan2(-n.x, n.y))
     p.box(c, (0.27, 0.07, 0.15), "spine", rot=rz(phi) @ ry(-18), bevel=0.02, smooth=True)
+    if HQ_FACE:
+        rot = (rz(phi) @ ry(-18)).to_4x4()
+        for dz in (0.045,):
+            p.box(c + (rot @ Vector((0.0, 0.0365, dz)).to_4d()).to_3d(), (0.24, 0.004, 0.006), "spine", rot=rz(phi) @ ry(-18))   # 지퍼
+        p.box(c + (rot @ Vector((0.1, 0.04, 0.045)).to_4d()).to_3d(), (0.012, 0.005, 0.022), "spine", rot=rz(phi) @ ry(-18))      # 지퍼 손잡이
+        q = prof.point(-40, 1.37, off + 0.006)
+        p.box(q, (0.042, 0.008, 0.02), "chest", rot=rz(40) @ rx(-30), bevel=0.002)                                          # 끈 조절 버클
     # 가슴의 버클
     bc = prof.point(-6, 1.275, off + 0.008)
     if buckle == "round":
@@ -682,10 +834,17 @@ def sling_bag(name, ring=True, buckle="round"):
 
 
 def watch(name):
-    p = Part(name, ["mat_watch_black"])
+    p = Part(name, ["mat_watch_black", "mat_print_light"] if HQ_FACE else ["mat_watch_black"])
     c = arm_point("L", 0.915)
     p.torus(c, 0.032, 0.0075, "forearm_L", seg=(16, 6))
     p.box((c.x - 0.036, c.y + 0.006, c.z), (0.012, 0.032, 0.032), "forearm_L", bevel=0.003)
+    if HQ_FACE:
+        f = Vector((c.x - 0.0425, c.y + 0.006, c.z))
+        p.tube(f - Vector((0.0008, 0, 0)), f + Vector((0.0, 0, 0)), 0.0128, 0.0128, "forearm_L", 1, seg=16, smooth=False)   # 문자판
+        p.torus(f, 0.0135, 0.0015, "forearm_L", seg=(16, 4), rot=ry(90))                                                # 테두리
+        p.box(f + Vector((-0.0006, 0.0, 0.004)), (0.0006, 0.0012, 0.008), "forearm_L")                                   # 분침
+        p.box(f + Vector((-0.0006, 0.0028, 0.0)), (0.0006, 0.0056, 0.0012), "forearm_L")                                 # 시침
+        p.tube(Vector((c.x - 0.036, c.y + 0.0235, c.z)), Vector((c.x - 0.036, c.y + 0.027, c.z)), 0.0022, 0.0022, "forearm_L", seg=8)   # 용두
     return p
 
 
@@ -820,6 +979,18 @@ def coat(name, belted=False, collar_up=False):
             p.box(tab, (0.006, 0.05, 0.022), f"forearm_{side}", 0, bevel=0.002)
         surf_seam(p, COAT_P, [(180.0, 0.56), (180.0, 1.38)])
         surf_seam(p, COAT_P, [(174.0, 0.55), (174.0, 0.74)], width=0.0035)                 # 뒤트임
+        for sx in (-1.0, 1.0):
+            # 견장: 어깨 위의 띠와 단추
+            a = COAT_P.point(sx * 90.0, 1.41, 0.004)
+            b = COAT_P.point(sx * 82.0, 1.445, 0.004)
+            p.ribbon([a, b], 0.026, 0.004, COAT_P.outward, lambda q: "chest")
+            p.ellipsoid(b + (a - b) * 0.25 + COAT_P.outward(b) * 0.004, (0.0055, 0.0055, 0.0035), "chest", seg=(8, 5))
+            # 벨트 고리(허리 옆)
+            q = COAT_P.point(sx * 100.0, 1.01, 0.004)
+            p.box(q, (0.008, 0.008, 0.07), "spine", rot=rz(-sx * 100.0))
+        start = p.vert_count()
+        p.polygon_slab([(-0.0, 0.0), (0.095, 0.0), (0.095, -0.12), (0.0, -0.09)], 0.006, Matrix.Translation((0.035, 0, 1.40)), "chest")
+        stick(p, start, lambda x, z: COAT_P.front_y(x, z), 0.0, 0.006, lift=0.0016)              # 가슴 덮개(오른쪽)
     if belted:
         p.loft([(0.975, 0.191, 0.146, 0.0), (1.045, 0.191, 0.146, 0.0)], lambda z: "spine", 1, seg=22, cap_top=False)
         start = p.vert_count()
@@ -854,9 +1025,10 @@ def slacks(name, cuffed=False):
 
 
 def derby(name):
-    p = Part(name, ["mat_shoe_black"])
+    p = Part(name, ["mat_shoe_black", "mat_lace_black"] if HQ_FACE else ["mat_shoe_black"])
     for side in ("L", "R"):
         low_shoe(p, side, toe_seam=True)
+        shoe_laces(p, side, 1)
     return p
 
 
@@ -877,6 +1049,8 @@ def tote(name):
     p.box((0.29, 0.0, 0.62), (0.085, 0.30, 0.25), "hand_R", bevel=0.012, smooth=True)
     for sy in (-1.0, 1.0):
         p.tube((0.29, sy * 0.075, 0.74), (0.255, sy * 0.012, 0.81), 0.006, 0.006, "hand_R", seg=8)
+        if HQ_FACE:
+            p.torus((0.29, sy * 0.075, 0.742), 0.009, 0.0025, "hand_R", seg=(10, 4), rot=rx(90))                  # 손잡이 고리
     return p
 
 
@@ -971,6 +1145,10 @@ def inner_shirt(name, pushed=False):
             p.torus(arm_point(side, 1.06), 0.052, 0.014, f"forearm_{side}", seg=(14, 6))
         else:
             sleeve(p, side, 1.41, 0.925, 0.056, 0.046, cuff=0.02)
+            if HQ_FACE:
+                sx = -1.0 if side == "L" else 1.0
+                q = arm_point(side, 0.932) + Vector((0.0, -0.051, 0.0))
+                p.ellipsoid(q, (0.004, 0.0025, 0.004), f"forearm_{side}", seg=(8, 5))           # 소매 단추
     return p
 
 
@@ -1002,7 +1180,42 @@ def vest(name, open_front=False):
         start = p.vert_count()
         p.box((zx, 0.0, 1.16), (0.009, 0.006, 0.60), "spine", 1)
         stick(p, start, lambda x, z: VEST_P.front_y(x, z) * 1.035, 0.0, 0.006, lift=0.003)
+        if HQ_FACE:
+            # 지퍼 이빨(엇갈린 작은 마디)과 손잡이
+            z = 0.87
+            k = 0
+            while z < 1.45:
+                start = p.vert_count()
+                p.box((zx + (0.004 if k % 2 else -0.004), 0.0, z), (0.007, 0.004, 0.003), "spine" if z < 1.22 else "chest", 1)
+                stick(p, start, lambda x, zz: VEST_P.front_y(x, zz) * 1.035, 0.0, 0.004, lift=0.0065, max_edge=0.0)
+                z += 0.0065
+                k += 1
+            start = p.vert_count()
+            p.box((zx + 0.004, 0.0, 1.405), (0.008, 0.004, 0.026), "chest", 1, bevel=0.0015)
+            stick(p, start, lambda x, zz: VEST_P.front_y(x, zz) * 1.035, 0.0, 0.004, lift=0.009, max_edge=0.0)
+    if HQ_FACE:
+        # 누빔 박음선: 칸 사이의 오목한 줄(앞판·뒤판, 팔 구멍은 피한다)
+        for j in range(5):
+            z = 0.84 + 0.06 + j * 0.12
+            if z > 1.40:
+                continue
+            ranges = [(-58.0, 58.0), (122.0, 238.0)] if z > 1.17 else [(-80.0, 80.0), (100.0, 260.0)]
+            for a0, a1 in ranges:
+                if open_front and a0 < 0 < a1:
+                    for b0, b1 in ((a0, -27.0), (27.0, a1)):
+                        pts = [_vest_valley(a, z) for a in [b0 + (b1 - b0) * i / 10 for i in range(11)]]
+                        p.ribbon(pts, 0.003, 0.0014, VEST_P.outward, lambda q: bone_by_height(q.z), 1)
+                    continue
+                pts = [_vest_valley(a, z) for a in [a0 + (a1 - a0) * i / 16 for i in range(17)]]
+                p.ribbon(pts, 0.003, 0.0014, VEST_P.outward, lambda q: bone_by_height(q.z), 1)
     return p
+
+
+def _vest_valley(a_deg, z):
+    rx_, ry_, yo = VEST_P.at(z)
+    k = 1.0 - 0.035 + 0.006
+    a = math.radians(a_deg)
+    return Vector((rx_ * k * math.sin(a), yo + ry_ * k * math.cos(a), z))
 
 
 def vest_patch(name, shape):
@@ -1156,6 +1369,11 @@ def jacket(name, open_to_hem=False):
 def shirt(name):
     p = Part(name, ["mat_shirt_white"])
     p.torus((0.0, 0.004, 1.476), 0.063, 0.015, "neck", seg=(18, 6), scale=(1.0, 0.95, 1.0))
+    if HQ_FACE:
+        for sx in (-1.0, 1.0):
+            start = p.vert_count()
+            p.polygon_slab([(sx * 0.008, 0.0), (sx * 0.05, -0.006), (sx * 0.022, -0.05)], 0.003, Matrix.Translation((0, 0, 1.468)), "chest")
+            stick(p, start, lambda x, z: JACKET_P.front_y(x, z) - 0.006, 0.0, 0.003, lift=0.0)   # 깃 끝
     for side in ("L", "R"):
         p.tube(arm_point(side, 0.935), arm_point(side, 0.90), 0.05, 0.049, f"forearm_{side}", seg=12)
     return p
@@ -1208,16 +1426,38 @@ def suit_trousers(name, cuffed=False):
     return p
 
 
+def shoe_laces(p, side, lace_surface, z_top=0.073):
+    """구두 끈: 발등의 끈 세 줄, 끈 구멍, 작은 매듭."""
+    if not HQ_FACE:
+        return
+    sx = -1.0 if side == "L" else 1.0
+    x = sx * 0.09
+    bone = f"foot_{side}"
+    for i in range(3):
+        y = 0.045 + i * 0.022
+        z = z_top - i * 0.006
+        p.box((x, y, z), (0.03, 0.004, 0.003), bone, lace_surface, rot=rx(-20))
+        for s2 in (-1.0, 1.0):
+            p.torus((x + s2 * 0.017, y, z - 0.001), 0.0032, 0.001, bone, lace_surface, seg=(8, 4), rot=rx(-20))
+    for s2 in (-1.0, 1.0):
+        p.torus((x + s2 * 0.009, 0.036, z_top + 0.004), 0.0065, 0.0016, bone, lace_surface, seg=(10, 4), rot=ry(90 + s2 * 30))
+
+
 def oxfords(name):
-    p = Part(name, ["mat_oxford_black"])
+    p = Part(name, ["mat_oxford_black", "mat_lace_black"] if HQ_FACE else ["mat_oxford_black"])
     for side in ("L", "R"):
         low_shoe(p, side, toe_seam=True, height=0.033)
+        shoe_laces(p, side, 1, 0.071)
     return p
 
 
 def briefcase(name):
     p = Part(name, ["mat_briefcase"])
     p.box((-0.30, 0.0, 0.60), (0.09, 0.40, 0.29), "hand_L", bevel=0.01)
+    if HQ_FACE:
+        for sy in (-1.0, 1.0):
+            p.box((-0.30 + 0.0, sy * 0.12, 0.735), (0.095, 0.03, 0.022), "hand_L", bevel=0.003)                # 잠금쇠
+        p.box((-0.30, 0.0, 0.70), (0.093, 0.405, 0.006), "hand_L")                                              # 뚜껑 이음선
     p.torus((-0.27, 0.0, 0.77), 0.045, 0.008, "hand_L", seg=(14, 6), rot=ry(90) @ rz(90), scale=(1.0, 0.6, 1.0))
     return p
 

@@ -15,7 +15,7 @@
     2.5,
     2.0
   ],
-  "generated": "2026-10-12T11:12:44",
+  "generated": "2026-10-12T11:40:46",
   "results": {
     "VA01_BAG_MIRROR": {
       "back": {
@@ -63,11 +63,11 @@
         "observe": 16.0
       },
       "left": {
-        "default": 4.5,
+        "default": 5.0,
         "observe": 16.0
       },
       "right": {
-        "default": 4.5,
+        "default": 5.0,
         "observe": 16.0
       }
     },
@@ -110,19 +110,19 @@
     "VA06_WATCH_MIRROR": {
       "back": {
         "default": 0.0,
-        "observe": 8.5
+        "observe": 10.0
       },
       "front": {
         "default": 2.5,
         "observe": 10.0
       },
       "left": {
-        "default": 2.0,
-        "observe": 8.5
+        "default": 0.0,
+        "observe": 7.0
       },
       "right": {
-        "default": 2.0,
-        "observe": 8.5
+        "default": 0.0,
+        "observe": 7.0
       }
     },
     "VA07_HAIR_PART_MIRROR": {
@@ -203,8 +203,8 @@
         "observe": 10.0
       },
       "front": {
-        "default": 2.0,
-        "observe": 8.5
+        "default": 2.5,
+        "observe": 10.0
       },
       "left": {
         "default": 2.0,
@@ -240,7 +240,7 @@
       },
       "front": {
         "default": 0.0,
-        "observe": 4.5
+        "observe": 4.0
       },
       "left": {
         "default": 0.0,
@@ -254,7 +254,7 @@
     "VA14_KEYRING_MISSING": {
       "back": {
         "default": 0.0,
-        "observe": 7.0
+        "observe": 6.0
       },
       "front": {
         "default": 0.0,
@@ -290,7 +290,7 @@
     "VA16_TAB_MIRROR": {
       "back": {
         "default": 0.0,
-        "observe": 5.0
+        "observe": 4.5
       },
       "front": {
         "default": 0.0,
@@ -380,10 +380,10 @@
     "VA21_SOLE_THICK": {
       "back": {
         "default": 3.5,
-        "observe": 12.0
+        "observe": 10.0
       },
       "front": {
-        "default": 2.5,
+        "default": 3.0,
         "observe": 7.0
       },
       "left": {
@@ -568,7 +568,7 @@
       },
       "left": {
         "default": 3.0,
-        "observe": 12.0
+        "observe": 14.0
       },
       "right": {
         "default": 3.5,
@@ -721,7 +721,7 @@
     },
     "VC04_SHOES_LOWTOP": {
       "back": {
-        "default": 4.5,
+        "default": 5.0,
         "observe": 16.0
       },
       "front": {
@@ -733,7 +733,7 @@
         "observe": 14.0
       },
       "right": {
-        "default": 0.0,
+        "default": 2.5,
         "observe": 14.0
       }
     },
@@ -751,7 +751,7 @@
         "observe": 16.0
       },
       "right": {
-        "default": 5.0,
+        "default": 6.0,
         "observe": 16.0
       }
     },
@@ -783,11 +783,11 @@
         "observe": 16.0
       },
       "left": {
-        "default": 4.0,
+        "default": 4.5,
         "observe": 16.0
       },
       "right": {
-        "default": 4.0,
+        "default": 4.5,
         "observe": 16.0
       }
     },

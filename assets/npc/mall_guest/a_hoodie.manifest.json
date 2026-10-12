@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 10080,
+      "tris": 10464,
       "bones": [
         "head",
         "neck",
@@ -58,7 +58,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 3899,
+      "tris": 4815,
       "bones": [
         "head"
       ]
@@ -68,7 +68,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 3899,
+      "tris": 4815,
       "bones": [
         "head"
       ]
@@ -78,7 +78,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 5269,
+      "tris": 6329,
       "bones": [
         "head"
       ]
@@ -90,7 +90,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -102,7 +102,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -114,7 +114,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -126,16 +126,17 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2812,
+      "tris": 3868,
       "bones": [
         "head"
       ]
     },
     "Hoodie": {
       "surfaces": [
-        "mat_hoodie_gray"
+        "mat_hoodie_gray",
+        "mat_stripe_gray"
       ],
-      "tris": 4910,
+      "tris": 6706,
       "bones": [
         "hips",
         "spine",
@@ -148,9 +149,10 @@
     },
     "HoodieSleeveRolledR": {
       "surfaces": [
-        "mat_hoodie_gray"
+        "mat_hoodie_gray",
+        "mat_stripe_gray"
       ],
-      "tris": 5046,
+      "tris": 6578,
       "bones": [
         "hips",
         "spine",
@@ -229,9 +231,11 @@
     },
     "JeansStraight": {
       "surfaces": [
-        "mat_denim"
+        "mat_denim",
+        "mat_stitch_gold",
+        "mat_button_gold"
       ],
-      "tris": 4069,
+      "tris": 10145,
       "bones": [
         "hips",
         "thigh_L",
@@ -242,9 +246,11 @@
     },
     "JeansRolled": {
       "surfaces": [
-        "mat_denim"
+        "mat_denim",
+        "mat_stitch_gold",
+        "mat_button_gold"
       ],
-      "tris": 3997,
+      "tris": 9737,
       "bones": [
         "hips",
         "thigh_L",
@@ -287,7 +293,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 2454,
+      "tris": 4382,
       "bones": [
         "foot_L",
         "foot_R"
@@ -299,7 +305,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 2454,
+      "tris": 4382,
       "bones": [
         "foot_L",
         "foot_R"
@@ -320,7 +326,7 @@
         "mat_bag_black",
         "mat_keyring_yellow"
       ],
-      "tris": 540,
+      "tris": 672,
       "bones": [
         "chest",
         "spine"
@@ -331,7 +337,7 @@
         "mat_bag_black",
         "mat_keyring_yellow"
       ],
-      "tris": 540,
+      "tris": 672,
       "bones": [
         "chest",
         "spine"
@@ -341,7 +347,7 @@
       "surfaces": [
         "mat_bag_black"
       ],
-      "tris": 372,
+      "tris": 504,
       "bones": [
         "chest",
         "spine"
@@ -352,7 +358,7 @@
         "mat_bag_black",
         "mat_keyring_yellow"
       ],
-      "tris": 420,
+      "tris": 552,
       "bones": [
         "chest",
         "spine"
@@ -360,18 +366,20 @@
     },
     "WatchLeft": {
       "surfaces": [
-        "mat_watch_black"
+        "mat_watch_black",
+        "mat_print_light"
       ],
-      "tris": 300,
+      "tris": 576,
       "bones": [
         "forearm_L"
       ]
     },
     "WatchRight": {
       "surfaces": [
-        "mat_watch_black"
+        "mat_watch_black",
+        "mat_print_light"
       ],
-      "tris": 300,
+      "tris": 576,
       "bones": [
         "forearm_R"
       ]
@@ -424,7 +432,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 1227
+      "tris": 2191
     }
   }
 }

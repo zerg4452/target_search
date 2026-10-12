@@ -114,6 +114,15 @@
       "roughness": 0.9,
       "detail": "twill"
     },
+    "mat_stitch_gold": {
+      "color": [
+        0.8,
+        0.6,
+        0.3
+      ],
+      "roughness": 0.7,
+      "detail": "cotton"
+    },
     "mat_tab_red": {
       "color": [
         0.78,

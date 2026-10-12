@@ -37,7 +37,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 10080,
+      "tris": 10464,
       "bones": [
         "head",
         "neck",
@@ -69,7 +69,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -81,7 +81,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -108,7 +108,7 @@
       "surfaces": [
         "mat_coat_beige"
       ],
-      "tris": 6817,
+      "tris": 7317,
       "bones": [
         "hips",
         "spine",
@@ -124,7 +124,7 @@
         "mat_coat_beige",
         "mat_belt_brown"
       ],
-      "tris": 7037,
+      "tris": 7537,
       "bones": [
         "hips",
         "spine",
@@ -139,7 +139,7 @@
       "surfaces": [
         "mat_coat_beige"
       ],
-      "tris": 6801,
+      "tris": 7301,
       "bones": [
         "hips",
         "spine",
@@ -199,9 +199,10 @@
     },
     "ShoesDerby": {
       "surfaces": [
-        "mat_shoe_black"
+        "mat_shoe_black",
+        "mat_lace_black"
       ],
-      "tris": 1926,
+      "tris": 3086,
       "bones": [
         "foot_L",
         "foot_R"
@@ -222,7 +223,7 @@
       "surfaces": [
         "mat_tote_brown"
       ],
-      "tris": 320,
+      "tris": 480,
       "bones": [
         "hand_R"
       ]
@@ -231,7 +232,7 @@
       "surfaces": [
         "mat_tote_brown"
       ],
-      "tris": 320,
+      "tris": 480,
       "bones": [
         "hand_L"
       ]

@@ -39,7 +39,7 @@
       "surfaces": [
         "mat_skin"
       ],
-      "tris": 10080,
+      "tris": 10464,
       "bones": [
         "head",
         "neck",
@@ -60,7 +60,7 @@
         "mat_hair_brown",
         "mat_skin"
       ],
-      "tris": 3899,
+      "tris": 4815,
       "bones": [
         "head"
       ]
@@ -72,7 +72,7 @@
         "mat_iris",
         "mat_lip"
       ],
-      "tris": 2692,
+      "tris": 3748,
       "bones": [
         "head"
       ]
@@ -113,7 +113,7 @@
         "mat_lace_white",
         "mat_stripe_gray"
       ],
-      "tris": 2454,
+      "tris": 4382,
       "bones": [
         "foot_L",
         "foot_R"

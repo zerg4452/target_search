@@ -65,7 +65,9 @@
         "slot": "pants",
         "node": "JeansRolled",
         "materials": [
-          "mat_denim"
+          "mat_denim",
+          "mat_stitch_gold",
+          "mat_button_gold"
         ]
       },
       "calibrated": "V-01"
@@ -112,7 +114,8 @@
         "slot": "top",
         "node": "HoodieSleeveRolledR",
         "materials": [
-          "mat_hoodie_gray"
+          "mat_hoodie_gray",
+          "mat_stripe_gray"
         ]
       },
       "calibrated": "V-01"
@@ -134,7 +137,8 @@
         "slot": "watch",
         "node": "WatchRight",
         "materials": [
-          "mat_watch_black"
+          "mat_watch_black",
+          "mat_print_light"
         ]
       },
       "calibrated": "V-01"
@@ -287,7 +291,7 @@
       "visible_from": [
         "front"
       ],
-      "identify_distance_m": 4.5,
+      "identify_distance_m": 4.0,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
@@ -357,11 +361,12 @@
       "name_ko": "뒷주머니 탭이 왼쪽에 있음",
       "group": "lower",
       "kind": "mirror",
-      "difficulty": 3,
+      "difficulty": 4,
       "visible_from": [
-        "back"
+        "back",
+        "right"
       ],
-      "identify_distance_m": 5.0,
+      "identify_distance_m": 4.5,
       "silhouette_change": false,
       "milestone": "M2",
       "op": {
